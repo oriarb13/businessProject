@@ -233,8 +233,3 @@ function cal(num99)
   console.log(sum99);
 }
 cal(5);
-console.log(8888);
-console.log(8888);
-console.log(8888);
-
-

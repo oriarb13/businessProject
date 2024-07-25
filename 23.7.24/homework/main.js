@@ -233,6 +233,5 @@ function cal(num99)
   console.log(sum99);
 }
 cal(5);
-let bb="bacr";
-console.log();
+
 

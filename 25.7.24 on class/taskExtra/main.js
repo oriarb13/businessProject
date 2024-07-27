@@ -6,6 +6,7 @@ const pin2 ;
 function pinVerification(pin1)
 {
     if (pin1===pin2) return true;
+    else return false;
 }
 function checkBalance(accountBalance)
 {
@@ -27,8 +28,26 @@ function deposittt(deposit,balance)
     balance+=deposit;
     return("your new balance is: " +balance);
 }
-function ATMOperation ()
+function mainATMOperation ()
 {
-    if()
-
+    console.log("hello, enter your PIN code pleas");
+     while (!pinVerification(pin1))
+     {
+       console.log("this PIN code invalid, pleas enter your PIN code again!!!" );
+     }
+     ////////////////////////////////////////////////////////////////איך ךתת עוד אופציות
+     console.log("choose your action. 1-check balance, 2-withdraw, 3-deposit");
+    let action1;
+     switch(action1) {
+        case 1:
+            accountBalance.checkBalance(); 
+        break;
+        case 2:
+            console.log("enter your desirable withdraw ");
+            handleWithdrawls(maximumWithdrawalLimit,accountBalance);
+        break;
+        case 3:
+         deposittt(deposit,balance);
+        break;
+     }
 }

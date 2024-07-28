@@ -1,12 +1,14 @@
-let accountBalance;
-let maximumWithdrawalLimit;
-const pin1 ;
-const pin2 ;
-
-function pinVerification(pin1)
-{
-    if (pin1===pin2) return true;
-    else return false;
+let accountBalance =prompt("enter your acount balance");
+let maximumWithdrawalLimit=prompt("enter your maximum withdraw");
+const pin2 =prompt("enter your PIN") ;
+function pinVerification(pin2)
+{ 
+    let pin1=prompt("enter your PIN code");
+    while (pin1!==pin2) 
+    {
+        pin1=prompt("your PIN is uncorrect");
+    }
+    return true;
 }
 function checkBalance(accountBalance)
 {
@@ -14,40 +16,53 @@ function checkBalance(accountBalance)
 }
 function handleWithdrawls(maximumWithdrawalLimit,accountBalance)
 {
+    let withdrawalamount;
+
     if(maximumWithdrawalLimit<=accountBalance)
     {
-        accountBalance-=maximumWithdrawalLimit;
+        if(withdrawalamount<=maximumWithdrawalLimit)
+        {
+        accountBalance-=withdrawalamount;
         return ("withdrawn amount is: "+maximumWithdrawalLimit);
+        }
+        else return ("the withdrawal is more than your maximum withdraw limit: "+maximumWithdrawalLimit); 
     }
-    else return ("you can not afford this withdraw amount,try equal or less than: "+accountBalance);
+    else return ("the withdrawal is more than your balance: "+accountBalance);
 
 }
-let deposit ;
-function deposittt(deposit,balance)
+function deposittt(balance)
 {
+    let deposit=prompt("enter deposit");
     balance+=deposit;
     return("your new balance is: " +balance);
 }
 function mainATMOperation ()
 {
-    console.log("hello, enter your PIN code pleas");
-     while (!pinVerification(pin1))
+    pin1.pinVerification()
+     
      {
        console.log("this PIN code invalid, pleas enter your PIN code again!!!" );
      }
-     ////////////////////////////////////////////////////////////////איך ךתת עוד אופציות
-     console.log("choose your action. 1-check balance, 2-withdraw, 3-deposit");
-    let action1;
-     switch(action1) {
+    let action1= prompt("choose your action. 1-check balance, 2-withdraw, 3-deposit");
+    let isFinish= 2;
+    while(isFinish===2)
+    { 
+      switch(action1) 
+      {
         case 1:
             accountBalance.checkBalance(); 
         break;
         case 2:
-            console.log("enter your desirable withdraw ");
             handleWithdrawls(maximumWithdrawalLimit,accountBalance);
         break;
         case 3:
          deposittt(deposit,balance);
         break;
-     }
+      }
+    isFinish=prompt("are you finish? 1-yes     2-no")
+    }
+}   
+function integration(pin2,accountBalance,maximumWithdrawalLimit,)
+{
+      mainATMOperation(pin2,accountBalance,maximumWithdrawalLimit);
 }

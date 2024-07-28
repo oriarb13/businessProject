@@ -199,6 +199,16 @@ if(age4<18) isEmployed2="student";
 else if(age4>17&& !isEmployed) isEmployed2="Unemployed Adult";
 else if(age4>17&& isEmployed) isEmployed2="employed Adult";
 //25
+let month4;
+let season1;
+switch(month4)
+    {
+    case 1,2,12: season1="'winter";
+    case 3,4,5: season1="spring";
+    case 6,7,8: season1="summer";
+    case 9,10,11: season1="fall";
+    default: season1="invalid month";
+    }
 //26
 let x0;
 let y0;

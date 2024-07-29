@@ -86,11 +86,66 @@ console.log(separator);
 
 
 //15
-let array1=[80,90,70,40,50,60];
+let array1=[0,0,70,40,50,60];
 let array2=[0,5,8,6,4];
 array1.concat(array2);
 console.log(array1);
 
 //16
+console.log(fruits);
+console.log(fruits.reverse());
+
+////////17
+
+let arrayNames=["ori","nana","baba","dor"];
+let l;
+let arrayGreeting=arrayNames.map(function(l){
+    return "hello "+l;
+});
+console.log(arrayGreeting);
+
+/////////
 
 
+//18
+function greater(number){
+    if (number > 0) return true;
+}
+console.log( array2.every(greater));
+
+//19
+function greater10(x){
+    if (x > 10) return true;
+
+}
+console.log( array1.find(greater10));
+
+
+//20
+function banananananananananana(x){
+    if (x==="banana") return true;
+}
+console.log(fruits.some(banananananananananana));
+
+//21
+function func(x,y){
+    return x+y;
+
+}
+console.log( array1.reduce(func));
+
+
+//22
+let rib=[];
+for ( i = 1; i < 11 ; i++){
+    rib.push(i);
+    rib[i]*=rib[i];
+}
+console.log(rib);
+
+//23
+let words =["fill","run","exercise","download"];
+function moreThan5(word){
+    if (word.length < 5) return false;
+}
+console.log(words.filter(moreThan5));

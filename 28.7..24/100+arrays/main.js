@@ -208,7 +208,24 @@ console.log(array0);
 
 
 //66
+console.log(fruits);
 console.log(fruits.sort());
 
 //67
 
+let arr3=[10,20,3,2,19];
+arr3.sort(function(a, b){return b - a});
+console.log(arr3);
+
+//68
+
+arr3.sort(function(a, b){return a-b});
+console.log(arr3);
+
+
+//69
+let arr4=["app","mouse","game"];
+arr4.sort(function(a, b){return a.length-b.length});
+console.log(arr4);
+
+//71

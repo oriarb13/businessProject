@@ -207,7 +207,6 @@ console.log(array0);
 
 
 
-
 //66
 console.log(fruits.sort());
 

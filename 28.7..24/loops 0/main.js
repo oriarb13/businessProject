@@ -162,4 +162,29 @@ let numLines=5
     }
 
     //29
-    
+
+    function multi4(numMult){
+        let line3 = ``;
+        for (i = 1 ; i <= numMult ; i++){
+            for(j =1; j <= numMult;j++){
+                line3 += String(i*j)+` `
+            }
+            line3+=`\n`
+        }
+        return line3;
+    }
+    console.log(multi4(5));
+
+
+    //30
+    function pattern(numOf){
+        let line4 = ``;
+        for (i = 1 ; i <= numOf ; i++){
+            for(j =1; j <= i ;j++){
+                line4 += String(i);
+            }
+            line4+=`\n`;
+        }
+        return line4;
+    }   
+    console.log(pattern(6));

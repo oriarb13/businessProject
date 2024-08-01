@@ -236,8 +236,6 @@ function countChar(string, char) {
   console.log(vowelsOfStr("oriarbeli"));
 
 
-
-
   //5
   function reverse(str){
     let newstr = "";
@@ -286,10 +284,22 @@ sum2Darr([[1,2,3],[4,3,2]]);
 
 
 //8
-
-
-
-
+function freq(str){
+  let obj={
+  };
+  for (let i = 0; i < str.length; i++) {
+    if(!obj[str[i]]){
+      for (let j = 0; j < str.length; j++) {
+         if(str[i] === str[j]){
+          if(!obj[str[i]]) obj[str[i]]=1;
+          else obj[str[i]]++;           
+         } 
+      }  
+    }
+  }
+ console.log(obj);
+}
+freq("okkhello")
 //9
 function Convert(arr1){
    let newarr=[];
@@ -365,10 +375,8 @@ function prime(start,end){
   let primeNumbers="prime numbers: ";
   for (i = start; i <= end; i++){
         let bool1=true;
-        console.log(i);
         for (j = 2; j <= Math.sqrt(i)  ; j++){
-            console.log(j);
-            if(i%j === 0 && i !== j) {
+            if(i%j === 0 ) {
                 bool1=false;
                 break;
         }
@@ -377,4 +385,63 @@ function prime(start,end){
     }
     return primeNumbers;
 }
-console.log(prime(10,16));
+console.log(prime(10,20));
+
+
+
+//14
+
+function sum5(arr1,i){
+  let newarr=[];
+  let sum = 0;
+  //let sum2 = 0;
+  for (let i = 0; i < arr1.length; i++) {
+      let currentarr= arr1[i];
+      for (let j = 0; j < currentarr.length ; j++) {
+          let currentnum = currentarr[j];
+          sum+= currentarr[j];
+      }
+    }
+}
+
+function sort(arr2D){
+let newArr=[];
+let sum2 = 0;
+function sum5(arr1){
+  let sum = 0;
+  for (let i = 0; i < arr1.length; i++) {
+    sum+= arr1[i];
+  }
+  return sum;
+}
+let sum3 =sum5(arr2D[i]);
+for (let j = 1; j < arr2D.length; j++) {
+  sum2=sum5(arr2D[j]);
+  if(sum3 <= sum2){
+    newArr.splice(j-1,j-2);
+    break
+  }
+ 
+}
+}
+
+
+
+
+
+//       if(sum >= sum2){
+//         sum2 = sum;
+//         newarr.unshift (sum2);
+//       }
+//       else{ 
+//         for (let k = 0; k < newarr.length; k++) {
+
+//         } 
+//       } 
+
+   
+//   }
+//   console.log();
+// }
+
+// //15

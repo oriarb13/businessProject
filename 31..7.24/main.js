@@ -267,16 +267,36 @@ book.checkOut();
 book.return();
 
 
-//17
-colorMixer={
-    color1:"blue",
-    color2:"yrllow"
-    mix: function(){
+// //17
+// colorMixer={
+//     color1:"blue",
+//     color2:"yrllow"
+//     mix: function(){
+        
+//     }
+// };
 
+//18
+let tempConverter={
+    celsius:Number,
+    fahrenheit:Number,
+    setC : function(temp){
+        this.celsius=temp;
+        this.fahrenheit=temp * 9/5 + 32;
+    },
+    setF : function(temp){
+        this.fahrenheit=temp;
+        this.celsius=(temp-32)*5/9;
+    },
+    getC : function(temp){
+        this.celsius=temp;
+    },
+    getF : function(temp){
+        this.fahrenheit=temp;
     }
-};
-
-
+}
+tempConverter.setC(22);
+console.log(tempConverter);
 // //22
 // function getRandomIntInclusive(min, max) {
 //     const minCeiled = Math.ceil(min);

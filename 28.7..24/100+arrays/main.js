@@ -229,3 +229,21 @@ arr4.sort(function(a, b){return a.length-b.length});
 console.log(arr4);
 
 //71
+
+colors.forEach(function print9(x) {
+    console.log(x);
+})
+
+
+//72
+console.log(numbers);
+numbers.forEach(function double(item, index, arr) {
+    arr[index] = item *2;
+})
+console.log(numbers);
+
+
+//73
+
+
+//74

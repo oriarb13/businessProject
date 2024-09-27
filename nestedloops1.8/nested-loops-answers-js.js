@@ -168,7 +168,7 @@ for (let i = 0; i < 6; i++) {
     console.log(row);
 }
 
-// Exercise 17
+// Exercise 17/////////////////////////////////////////////////////////////////////abc
 console.log("\nExercise 17:");
 let char = 65;
 for (let i = 1; i <= 5; i++) {

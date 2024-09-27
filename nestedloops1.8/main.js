@@ -170,3 +170,15 @@ for (let i = 0; i < 5; i++) {
 }
 console.log(row1);
 
+
+
+//////////////////////////////////////////////////
+console.log("\nExercise 25:");
+for (let i = 1; i <= 5; i++) {
+    let row = '*'.repeat(i) + ' '.repeat(2*(5-i)) + '*'.repeat(i);
+    console.log(row);
+}
+for (let i = 4; i >= 1; i--) {
+    let row = '*'.repeat(i) + ' '.repeat(2*(5-i)) + '*'.repeat(i);
+    console.log(row);
+}

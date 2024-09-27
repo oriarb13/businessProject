@@ -1,0 +1,56 @@
+function getWeight(){
+        obj.weight = getWeight();
+        let weight = Number(prompt("enter your weight (Kg)"));
+        while(weight <= 0 || isNaN(weight)){
+            weight = Number(prompt("enter your weight in Kgs, as a positive number"));
+        }
+        console.log(weight);
+        return weight;
+        }
+
+////////////////////////////////////////////
+function getHeight(){
+let height =Number( prompt("enter your height (Meter)"));
+while(height <= 0 || isNaN(height)){
+    height = Number(prompt("enter your height in Meters, as a positive number"));
+}
+console.log(height);
+return height;
+}
+//console.log(`height: ${height}, weight: ${weight}`);
+
+
+//////////////////////////////////////
+function calculateBMI(weight,height){
+let bmi =  weight / Math.pow(height,2)  ;
+console.log(`your BMI is: ${bmi}`);
+return bmi;
+}
+
+////////////////////////////////////
+function getBMICategory(bmi){
+if (bmi < 18.5) return `your BMI is: ${bmi}, you are underweight`;
+else if (bmi >= 18.5 && bmi <= 24.9) return `your BMI is: ${bmi}, your weight is normal`;
+else if (bmi >= 25 && bmi <= 29.9) return `your BMI is: ${bmi}, your weight is overweight`;
+else if (bmi > 30) return `your BMI is: ${bmi}, your weight is obese`;
+}
+// console.log(getBMICategory());
+
+/////////////////////////////////////
+function lastProduct() {
+    const array = [];
+    let counter = 1;
+    let isDone = 1;
+    while (isDone === 1) {
+        const obj = {ID : counter};
+        obj.weight = getWeight();
+        obj.height = getHeight();
+        obj.bmi = calculateBMI(obj.weight,obj.height);
+        obj.category = getBMICategory();
+        array.push(obj);
+        isDone = prompt("2= i done, 1= i want to continue");
+        counter++;
+    }
+    console.log(array);
+    return array;
+}

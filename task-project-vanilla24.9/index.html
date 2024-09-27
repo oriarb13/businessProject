@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>Employees</title>
+    <link
+      rel="stylesheet"
+      href="style.css"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Employee Management Application</h1>
+      <h2>
+        ADD A NEW EMPLOYEE
+      </h2>
+      <div class="wrap-form">
+      
+        <form id="employee-form">
+          <input id="employee-first-name-input" type="text" placeholder="Enter first name" required/>
+          <input id="employee-last-name-input" type="text" placeholder="Enter last name" required/>
+          <input id="employee-age-input" type="number" placeholder="Enter age" required/>
+          <select id="employee-department-input" name="options" required>
+            <option value="select department"></option>
+            <option value="sales">sales</option>
+            <option value="marketing">marketing</option>
+            <option value="finance">finance</option>
+            <option value="HR">HR</option>
+            <option value="operations">operations</option>
+            <option value="logistics">logistics</option>
+          </select>
+          <input id="employee-salary-input" type="number" placeholder="Enter salary" required/>
+          <button class="btnAdd">add Employee</button>
+        </form>
+      </div>
+        
+      <div class="main-wrap">
+        <h3>
+          EMPLOYEES DATA CARDS
+        </h3>
+        <div><button id="all-btn">show all of the employees</button></div>
+
+        
+        <div id="filter-buttons">
+          <form id="filter-last-name" class="filters">
+            <div><input id="filter-last-name1" type="text" placeholder="search by last name" /></div>
+            <div><button id="name-btn">search by last name</button></div>
+          </form>
+
+          <form id="filter-age" class="filters">
+            <div><input id="filter-age1" type="number" placeholder="search by age" /></div>
+            <div><button id="age-btn">search by older age</button></div>
+          </form>
+          <form id="filter-date" class="filters">
+            <div><input id="filter-date1" type="date"  /></div>
+            <div><button id="date-btn">search by earlier date</button></div>
+          </form>
+          <form id="filter-salary" class="filters">
+            <div><input id="filter-salary1" type="number" placeholder="search by salary" /></div>
+            <div><button id="salary-btn">search by salary</button></div>
+          </form>
+          
+        </div>
+        <div class = "cards-sideBar">
+          <div id="employees-cards" >
+
+          </div>
+          <sidebar id="side-bar" class="hidden">
+            <form id="employee-edit">
+              <h3>EDIT AN EMPLOYEE</h3>
+                <div>first name: <span id="edit-first-name"> </span></div>
+                <div>last name: <span id="edit-last-name"> </span></div>
+                <div>age:<input id="employee-age-edit" type="number"  /></div>
+                <div>start date: <span id="edit-date"> </span></div>
+                <div>department<select id="employee-department-edit" name="options" >
+                  <option value="select department"></option>
+                  <option value="sales">sales</option>
+                  <option value="marketing">marketing</option>
+                  <option value="finance">finance</option>
+                  <option value="HR">HR</option>
+                  <option value="operations">operations</option>
+                  <option value="logistics">logistics</option>
+                </select>
+                </div>
+                <div>salary:<input id="employee-salary-edit" type="number"  /></div>
+                <div><button>save the edit</button></div>
+            </form>
+        </sidebar>
+      </div>
+
+      </div>
+    </div>
+
+    </div>
+      
+    
+    <script
+        type="module"
+        src="controller.js"
+      ></script>
+  </body>
+</html>

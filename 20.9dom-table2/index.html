@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>product list</h1>
+        <form id="productForm">
+            <input type="text" id="productName" placeholder="productName" required>
+            <input type="number" id="productPrice" placeholder="Product Price" required>
+            <input type="number" id="productAmount" placeholder="Amount" required>
+            <button type="submit">Add Product to the list</button>
+        </form>
+
+        <table id="productTable"></table>
+            <thead>
+                <tr>
+                    <th>Product Name</th>
+                    <th>Product Price</th>
+                    <th>Amount</th>
+                    <th>Total</th>
+                    <th>Remove</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Products will be dynamically added here -->
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="3">Total Price</td>
+                    <td id="totalPrice">0</td>
+                    <td></td>
+                </tr>
+            </tfoot>
+        </table>
+
+
+        <ol id="productList">
+            <li>
+            </li>
+        </ol>
+        
+    </div>
+    <script src="index.js"></script>
+</body>
+</html>

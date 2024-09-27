@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>Employees</title>
+    <link
+      rel="stylesheet"
+      href="style.css"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Employees</h1>
+      <!-- Filter options for the to-do list -->
+      <div id="filter-buttons">
+        <button id="filter-all">All</button>
+        <button id="filter-active">Active</button>
+        <button id="filter-completed">Completed</button>
+      </div>
+
+      <form id="employee-form">
+        <input id="employee-first-name-input" type="text" placeholder="Enter first name" required/>
+        <input id="employee-last-name-input" type="text" placeholder="Enter last name" required/>
+        <input id="employee-age-input" type="number" placeholder="Enter age" required/>
+        <select id="employee-department-input" name="options" required>
+            <option value="option1">select department</option>
+            <option value="option2">אופציה 2</option>
+            <option value="option3">אופציה 3</option>
+        </select>
+        <input id="employee-salary-input" type="number" placeholder="Enter salary" required/>
+        <button>add Employee</button>
+      </form>
+
+      <h2>
+        EMPLOYEES DATA CARDS
+      </h2>
+
+
+      <div id="employees-cards">
+        <!-- Todos will be rendered here -->
+      </div>
+
+    </div>
+      
+    
+    <script
+        type="module"
+        src="controller.js"
+      ></script>
+  </body>
+</html>

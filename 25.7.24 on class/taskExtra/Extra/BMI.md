@@ -8,7 +8,7 @@ Welcome to your first programming exercise! You'll be creating a Body Mass Index
 - JavaScript Console: https://www.w3schools.com/jsref/obj_console.asp
 
 ## Exercise 1: Variables and Basic Input
-
+    76
 Goal: Collect user's weight and height using prompts and display them in the console.
 
 Hints:

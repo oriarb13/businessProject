@@ -245,5 +245,74 @@ console.log(numbers);
 
 //73
 
-
 //74
+numbers.forEach((n,i) => {
+    if(n===20) console.log(i);
+});
+
+//75
+let counter=0;
+let x=[1,2,3,4,5,6,78,9,8]
+x.forEach((n) => {
+    if(n > 20) counter++;
+})
+console.log(counter);
+
+
+let newarr=fruits.map(function(str){
+    return str=str.length;
+});
+console.log(newarr);
+
+//77
+let nums=[1,4,9,16];
+let sqare1=nums.map(function(num){
+    return num=Math.sqrt(num);
+});
+console.log(sqare1);
+
+
+//78
+let evens=nums.map(function(num){
+    if(num % 2 === 0) return true;
+    else return false;
+});
+console.log(evens);
+
+
+//79
+
+let namess=["ori","guy","yali"];
+let greeting = namess.map(function(num){
+    return `hello, ${num}`;
+});
+console.log(greeting);
+
+
+//80
+
+let temp=nums.map(function(num){
+    return num=(num * 9/5) + 32;
+});
+console.log(temp);
+
+
+//81
+
+let evenFruits = fruits.filter(function(num){
+     if(num.length % 2 === 0) return num
+});
+console.log(evenFruits);
+
+
+//82
+let fiveFruits = fruits.filter(function(num){
+    if(num.length > 5) return num
+});
+console.log(fiveFruits);
+
+
+
+//83
+
+

@@ -11,10 +11,10 @@
 }
 
 html{
-    width:100% 
+    width:100% ;
 }
 body {    
-    font-size: 1.5rem;
+    /* font-size: 1.5rem; */
     font-weight: 400;
     font-style: normal;
     letter-spacing: 0.6px;
@@ -22,6 +22,9 @@ body {
     color:var(--white-grey);    
 }
 .container{
+    margin-right: auto;
+    margin-left: auto;
+    width: 500px;
     display: flex;
     flex-direction: column;
     gap: 1.6rem;
@@ -29,25 +32,52 @@ body {
 }
 
 h1{
-    font-size: 4rem;
+    /* font-size: 4rem; */
     margin-block: 2rem;
     font-weight: bold;
 }
 h2,h3{
     font-weight: bold;
 
-    font-size: 2rem;
+    /* font-size: 1rem; */
 }
 h1,h2{
     text-align: center;
 }
+#employee-form{
+    display: grid;
+    grid-template-columns:repeat(5, 1fr);
+    grid-template-rows:repeat(2, 1fr);
+}
+
 input {
-    font-size: 1.5rem;
+    font-weight: bold;
+    font-size: 0.6rem;
     border-radius: 5px;
     border: none; 
-    width: 14rem;
+    width: 5rem;
 }
-select{font-size: 1.5rem;}
+#filter-buttons>form>div>input {
+    font-weight: bold;
+    font-size: 0.8rem;
+    border-radius: 5px;
+    border: none; 
+    width: 7rem;
+}
+
+select{
+    font-size: 0.7rem;
+    width: 7rem;
+    margin-right: 0.3rem;
+    appearance: none;
+}
+option{
+    font-size: 3rem;
+}
+#employee-form button {
+    margin-top: 1rem;
+    grid-column: 2 / 5;
+}
 
 form>*{
     margin-bottom: 0.2rem;
@@ -55,14 +85,14 @@ form>*{
 
 
 .wrap-form{
-    position:sticky;
     background-color: var(--white-grey);
     border-radius: 10px;
     background-color:var(--form-bg-blue);
     width: fit-content;
-    padding-inline: 1rem;
-    padding-block: 1.6rem;
+    padding-inline: 0.2rem;
+    padding-block: 1rem;
     align-self: center;
+    margin-inline: 1rem ;
 }
 
 
@@ -79,7 +109,7 @@ form>*{
     display: grid;
     grid-template-columns: repeat(5,1fr);
     grid-template-rows: 1fr;
-    gap: 1rem;
+    gap: 0.5rem;
 }
 
 #side-bar{
@@ -89,6 +119,7 @@ form>*{
     border-radius: 10px;
     height: fit-content;
     position:fixed;
+    bottom: 10px;
 }
 #employee-edit h3{
     margin-bottom: 3rem;
@@ -99,11 +130,11 @@ form>*{
 }
 
 
-.cards-sideBar{
+/* .cards-sideBar{
     display: flex;
-    gap: 3rem ;
+    gap: 3rem ; 
+    }*/
 
-}
 #employees-cards{
     display: flex;
     flex-direction: column;
@@ -120,20 +151,13 @@ form>*{
 }
 
 
-
-
-
-
 button{
-    padding-block: 12px;
-    padding-inline: 32px;
+    padding-block: 8px;
+    padding-inline: 12px;
     
-    font-size: 1.3rem;
+    font-size: 0.8rem;
     border: none;
     cursor: pointer;
-    /* position: fixed; */
-    bottom: 0;
-    right: 0;
     
     background-color: var(--white-grey);
     color: var(--bg-blue);
@@ -152,3 +176,106 @@ button:hover {
 }
 
 
+@media(min-width:940px){
+    body{
+        width: 100%;
+    }
+    h1{
+        font-size: 6rem;
+        margin-top: 4rem;
+    }
+    h2,h3{
+        font-size: 4rem;
+    }
+
+
+    .wrap-form{
+        width: fit-content;
+        padding-inline: 0.2rem;
+        padding-block: 1rem;
+        align-self: center;
+        margin-inline: 1rem ;
+    }
+    
+    input{
+        font-weight: bold;
+        font-size: 3rem;
+        border-radius: 5px;
+        width: fit-content;    
+    }
+
+
+
+    #filter-buttons>form>div>input {
+        font-weight: bold;
+        font-size: 3rem;
+        width: fit-content;
+    }
+
+
+    #employee-form>input{
+        margin-inline: 1rem;
+        font-size: 3rem;
+    }
+
+    select{
+        font-size: 3rem;
+        width: 40rem;
+        margin-right: 0.3rem;
+    }
+
+    option{
+        font-size: 3rem;
+    }
+    
+
+
+
+    button{
+        margin-top: 1rem;
+        padding-block: 2rem;
+        padding-inline: 3rem;
+        font-size: 3rem;
+        margin-inline: 1rem;
+    }
+    
+    #employee-edit h3{
+        font-size: 6rem;
+        margin-bottom: 3rem;
+    }
+    
+    #employee-edit>*{
+        margin-bottom: 2rem;
+        font-size: 4rem;
+        
+    }
+    
+    #employees-cards{
+        display: grid;
+        grid-template-columns:repeat(4, 1fr);
+        gap: 2rem;
+        
+        
+    }
+    .card{
+        font-size: 4rem;
+        padding-block: 2rem;
+    padding-inline:3rem ;
+}
+.card>*{
+    margin-bottom: 2rem;
+}
+
+
+
+#side-bar{
+    padding-inline: 2rem;
+    padding-block: 3rem;
+    border-radius: 10px;
+    height: 100%;
+    width: 100%;
+    position:fixed;
+    bottom: 0;
+    right: 0;
+}
+}

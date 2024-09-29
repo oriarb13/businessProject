@@ -111,13 +111,16 @@ form>*{
 
 #side-bar{
     background-color: rgb(38, 71, 85);
-    padding-inline: 1.6rem;
-    padding-block: 2rem;
-    border-radius: 10px;
-    height: fit-content;
+    height: 100%;
+    width: 100%;
     position:fixed;
-    bottom: 10px;
+    bottom: 0;
+    right: 0;
+
+
 }
+
+
 #employee-edit h3{
     margin-bottom: 3rem;
 }
@@ -169,6 +172,10 @@ button:hover {
 
 .hidden{
     display:none;
+}
+
+span{
+    margin-left: 1rem;
 }
 
 
@@ -264,14 +271,5 @@ button:hover {
 
 
 
-#side-bar{
-    padding-inline: 2rem;
-    padding-block: 3rem;
-    border-radius: 10px;
-    height: 100%;
-    width: 100%;
-    position:fixed;
-    bottom: 0;
-    right: 0;
-}
+
 }

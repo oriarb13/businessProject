@@ -116,11 +116,14 @@ form>*{
     bottom: 10px;
 }
 #side-bar{
-    padding-inline: 2rem;
-    padding-block: 3rem;
-    border-radius: 10px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(38, 71, 85, 0.9);     opacity: 0; 
+    opacity: 1; 
 }
-
 
 #employee-edit h3{
     margin-bottom: 3rem;

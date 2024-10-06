@@ -141,7 +141,7 @@ function renderEmp(filteredEmployees = null) {
 
             //hide the cards
 
-            employeesService.hiddenSideBar2(elEmployeeCards);
+            // employeesService.hiddenSideBar2(elEmployeeCards);
             //show the edit card
             employeesService.hiddenSideBar(elSideBar);
 
@@ -151,7 +151,7 @@ function renderEmp(filteredEmployees = null) {
                 employeesService.editEmployee(currentEmployee.id, elEditAge.value, elEditDepartment.value, elEditSalary.value);
 
                 //show the cards
-                employeesService.hiddenSideBar(elEmployeeCards);
+                // employeesService.hiddenSideBar(elEmployeeCards);
 
                 //hide the edit 
                 employeesService.hiddenSideBar2(elSideBar);

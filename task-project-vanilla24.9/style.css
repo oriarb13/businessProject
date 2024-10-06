@@ -111,13 +111,14 @@ form>*{
 
 #side-bar{
     background-color: rgb(38, 71, 85);
-    height: 100%;
-    width: 100%;
+    height: fit-content;
     position:fixed;
-    bottom: 0;
-    right: 0;
-
-
+    bottom: 10px;
+}
+#side-bar{
+    padding-inline: 2rem;
+    padding-block: 3rem;
+    border-radius: 10px;
 }
 
 

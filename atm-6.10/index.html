@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ATM Project</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <h1>ATM Project</h1>
+    <div class="PIN">
+        <form id="PIN-form">
+            <div>
+                <label for="PIN">Enter PIN</label>
+                <input name="PIN" id="PIN" maxlength="4">
+            </div>
+            <div>
+                <label for="name">Enter first name</label>
+                <input name="name" id="name" maxlength="10">
+            </div>
+            <button>Submit</button>
+        </form>
+        
+        <p id="validation"></p>
+    </div>
+    
+<div id="main-wrap" class="hidden">
+    
+    <nav>
+        <ul>
+            <li>
+                <button id="deposit">Deposit</button>
+            </li>
+            <li>
+                <button id="withdraw">Withdraw</button>
+            </li>
+            <li>
+                <button id="balance">Balance</button>
+            </li>
+            <li>
+                <button id="lastTransaction">Last Transaction</button>
+            </li>
+        </ul>
+    </nav>
+    <div class="container">
+        <div id="withdrawEl" class="hidden">
+            <h1>
+                Withdraw
+            </h1>
+            <form id="withdraw-form" action="">
+                <input id="withdraw-input" placeholder="How much do you need?">
+                <button type="submit">Withdraw</button>
+            </form>
+            <p id="withdraw-response"></p>
+        </div>
+        <div id="depositEl" class="hidden">
+            <h1>
+                Deposit
+            </h1>
+            <form id="deposit-form" action="">
+                <input id="deposit-input" placeholder="How much do we get?">
+                <button  type="submit">Deposit</button>
+            </form>
+            <p id="deposit-response"></p>
+        </div>
+        <div id="balanceEl" class="hidden">
+            <h1>
+                Balance
+            </h1>
+            <p id="userBalance"></p>
+        </div>
+        <div id="lastTransactionEl" class="hidden">
+            <h1>
+                Last Transaction
+            </h1>
+            <ol></ol>
+        </div>
+    </div>
+</div>
+    <script
+        type="module"
+        src="./main.js">
+    </script>
+</body>
+</html>

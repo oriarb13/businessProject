@@ -1,0 +1,42 @@
+body {
+    background-color: antiquewhite;
+}
+
+.valid {
+    color: green;
+}
+
+.invalid {
+    color: red;
+}
+
+.hidden {
+    display: none;
+}
+
+ul{
+    display: flex;
+    gap: 6rem;
+    justify-content: center;
+}
+h1{text-align: center;}
+.PIN{
+    display: flex;
+    align-items: center;
+    justify-items: center;
+    justify-content: center;
+}
+.times3{
+    background-color: rgb(196, 10, 10);
+    height: 100%;
+    width: 100%;
+    bottom: 0px;
+    position:absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    color: white;
+    font-size: 5rem;
+    font-weight: bold;
+}

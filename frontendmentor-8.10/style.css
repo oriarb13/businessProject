@@ -1,0 +1,125 @@
+:root{
+    --Orange: hsl(25, 97%, 53%);
+    --white: hsl(0, 0%, 100%);
+    --Light-Grey: hsl(217, 12%, 63%);
+    --Dark-Blue : hsl(213, 19%, 18%);
+    --Dark-Blue2 : hsl(220, 20%, 22%);
+
+    --Very-Dar-kBlue :hsl(216, 12%, 8%);
+}
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+html{height: 100%;}
+body{
+    height: 100%;
+    font-size: 15px;
+    font-family: "Overpass";   
+    /* 400, 700 */
+    background-color: var(--Very-Dar-kBlue);
+    color: var(--Light-Grey);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    line-height: 1rem;
+}
+h1{
+    color: var(--white);
+    font-size: 1.3rem;
+}
+p{
+    font-weight: 700;
+    font-size: 0.65rem;
+}
+.wrap{
+    background-color: var(--Dark-Blue);
+    width: 310px;
+    border-radius: 1rem;
+    padding-block: 2rem;
+    padding-inline: 2rem;
+}
+
+.star{
+    display: flex;
+    height: 2.5rem;
+    width: 2.5rem;
+    border-radius: 50%;
+    background-color: var(--Dark-Blue2);
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+}
+#numbers{
+    display: flex;
+    justify-content: space-between;
+}
+.number{
+    display: flex;
+    height: 2.5rem;
+    width: 2.5rem;
+    border-radius: 50%;
+    background-color: var(--Dark-Blue2);
+    align-items: center;
+    justify-content: center;
+}
+.number:hover{
+    background-color: var(--Orange);
+}
+.numberClick{
+    background-color: var(--white);
+}
+
+.Rating-state{
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    /* display:none; */
+
+}
+.thanks{
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    justify-content: center;
+    align-items: center;
+}
+.thanks div{
+    color: var(--Orange);
+    background-color:var(--Dark-Blue2);
+    padding: 0.1rem;
+    border-radius: 1rem;
+}
+
+.thanks p{
+    text-align: center;
+}
+
+.hidden{
+    display:none;
+}
+
+button {
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    padding: 10px 2rem;
+    border: none;
+    border-radius: 2rem;
+    background-color: var(--white);
+    cursor: pointer;
+    transition:  0.3s;
+}
+
+button:hover {
+    background-color: var(--Orange);
+}
+
+
+@media(max-width:600px){
+    body{
+        width: 400px;;
+    }
+
+}

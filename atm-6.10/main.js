@@ -139,6 +139,16 @@ function renderLastTransaction(tranList1 = null) {
         Service.renderBalance(userBalanceEl); 
     });
 
+    //exit
+    const exitBtn=document.querySelector("#exit")
+    exitBtn.addEventListener('click', (event) => {
+        event.preventDefault();
+        Service.removeHidden(formElement)
+        Service.hiddenEl(mainWrap)
+        Service.hiddenEl(validationParagraph)
+
+    });
+
 }
     renderLastTransaction()
     

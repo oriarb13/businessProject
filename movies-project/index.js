@@ -35,6 +35,21 @@ const aboutPageEl = document.getElementById("about-page");
 const themeToggleButton = document.getElementById('theme-toggle');
 const exitBtn = document.getElementById("exitBtn");
 
+
+
+const mainWrap=document.getElementById("main1")
+
+const trailer = document.getElementById('trailer3');
+
+const movieName = document.getElementById('movie-name3');
+const releaseDate = document.getElementById('date3');
+const rating = document.getElementById('rating3');
+const overview = document.querySelector('#overview3 p');
+const bgImage = document.getElementById('bg-Image3');
+
+const actors = document.getElementById('actors');
+const wrapWrap=document.getElementById(`wrap-wrap`)
+
 //home page
 function homePage() {
     fetchMoviesTopRated()
@@ -135,6 +150,10 @@ function renderMovies(movies) {
     movies.forEach(movie => {
         const movieDiv = createMovieCard(movie);
         movieList.appendChild(movieDiv);
+
+        movieDiv.addEventListener(`click`,()=>{
+            moviePage(movie);
+        })
     });
 }
 
@@ -143,7 +162,6 @@ function createTopMovieCard(movie) {
     const movieDiv = document.createElement('div');
     const imageUrl = `https://image.tmdb.org/t/p/w500${movie.poster_path}`;
     movieDiv.classList.add('carousel-item');
-    
     num++;
     movieDiv.innerHTML = `
     <h3>
@@ -263,6 +281,8 @@ favoriteEl.addEventListener("click",() => {
     hideElement(carouselContainer)
     showElement(movieList)
     hideElement(aboutPageEl)
+    hideElement(wrapWrap)
+    showElement(mainWrap)
     
 });
 
@@ -270,21 +290,25 @@ favoriteEl.addEventListener("click",() => {
 //home page
 homeEl.addEventListener("click",() => {
     homePage()
+    showElement(mainWrap)
     showElement(selectPopular)
     showElement(weekDayTitle)
     showElement(carouselContainer)
     showElement(movieList)
     hideElement(aboutPageEl)
+    hideElement(wrapWrap)
 });
 
 
 //about page
 aboutEl.addEventListener(`click`,() =>{
+    showElement(mainWrap)
     hideElement(selectPopular)
     hideElement(weekDayTitle)
     hideElement(carouselContainer)
     hideElement(movieList)
     showElement(aboutPageEl)
+    hideElement(wrapWrap)
 
 })
 
@@ -329,6 +353,7 @@ const searchMovies = async (nameValue) => {
         hideElement(carouselContainer)
         hideElement(selectPopular)
         hideElement(weekDayTitle)
+        hideElement(wrapWrap)
         moviesTitleEl.innerHTML=`${nameValue} movies`
 
     } catch (error) {
@@ -353,12 +378,90 @@ exitBtn.addEventListener('click', () => {
 });
 
 
-//movie page
-function moviePage(movie){
 
 
+//actors render
+function displayActors(cast) {
+    const actorsContainer = document.getElementById('actors');
+    actorsContainer.innerHTML = ''; 
 
+    cast.forEach(actor => {
+        const actorDiv = document.createElement('div');
+        actorDiv.classList.add('actor');
+
+        const actorName = document.createElement('h3');
+        actorName.textContent = actor.name;
+
+        const profilePath = actor.profile_path ? `https://image.tmdb.org/t/p/w500${actor.profile_path}` : 'no-image.jpg'; // תמונה ברירת מחדל
+        const actorImage = document.createElement('img');
+        actorImage.src = profilePath;
+        actorImage.alt = actor.name;
+
+        actorDiv.appendChild(actorName);
+        actorDiv.appendChild(actorImage);
+
+        actorsContainer.appendChild(actorDiv);
+    });
 }
 
+
+//movie page
+function moviePage(movie) {
+    console.log(movie);
+    
+    showElement(wrapWrap)
+    hideElement(mainWrap);
+
+    movieName.textContent = movie.title;
+    releaseDate.textContent = `Release Date: ${movie.release_date}`;
+    rating.textContent = `Rating: ${movie.vote_average}`;
+    overview.textContent = movie.overview;
+    document.getElementById('bg-Image3').style.backgroundImage = `url('https://image.tmdb.org/t/p/original${movie.poster_path}')`;
+    //trailer
+    const options = {
+        method: 'GET',
+        url: `https://api.themoviedb.org/3/movie/${movie.id}/videos`,
+        params: { language: 'en-US' },
+        headers: {
+            accept: 'application/json',
+            Authorization: `Bearer ${API_KEY}`
+        }
+    };
+
+    axios.request(options)
+        .then(res => {
+            const trailers = res.data.results;
+            trailer.innerHTML = ''; 
+            if (trailers.length > 0) {
+                trailer.innerHTML = `<iframe width="560" height="800" src="https://www.youtube.com/embed/${trailers[0].key}" frameborder="0" allowfullscreen></iframe>`;
+            } else {
+                trailer.textContent = 'No trailer available.';
+            }
+        })
+        .catch(err => {
+            console.error(err);
+            trailer.textContent = 'Error fetching trailer.';
+        });
+
+    // credits
+    const creditsOptions = {
+        method: 'GET',
+        url: `https://api.themoviedb.org/3/movie/${movie.id}/credits`,
+        params: { language: 'en-US' },
+        headers: {
+            accept: 'application/json',
+            Authorization: `Bearer ${API_KEY}`
+        }
+    };
+    //take the actors
+    axios.request(creditsOptions)
+        .then(res => {
+            const cast = res.data.cast; 
+            displayActors(cast); //act render func
+        })
+        .catch(err => {
+            console.error(err);
+        });
+}
 
 homePage();

@@ -1,0 +1,187 @@
+:root {
+    --blue-bgc: rgb(50, 50, 50);
+    --Dark-blue: rgb(20, 20, 20);
+    --footer-bg: rgb(30, 30, 30);
+    --text-color: rgb(220, 220, 220);
+    --hover-color: rgb(80, 80, 80);
+}
+
+body {
+    font-family: Arial, sans-serif;
+    color: var(--text-color);
+    width: 70%;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html, body { 
+    height: 100%; 
+    background-color: var(--footer-bg);
+}
+
+nav {
+    position: sticky;
+    top: 0;
+    background-color: var(--Dark-blue);
+    padding: 1rem 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    margin: 0 1rem;
+    cursor: pointer; 
+}
+
+nav ul li a {
+    color: var(--text-color);
+    text-decoration: none;
+}
+
+main {
+    background-color: var(--blue-bgc);
+    color: white;
+}
+
+h1 {
+    text-align: center;
+    padding: 4rem 0 1rem;
+    position: sticky;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr)); 
+    gap: 5rem; 
+    justify-items: center; 
+    padding: 10rem;
+}
+
+.movieCard { 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 1rem;
+    background-color: var(--Dark-blue);
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease;
+}
+
+.movieCard:hover {
+    transform: scale(1.05);
+    background-color: var(--hover-color); 
+}
+
+.movie-image {
+    width: 100%; 
+    height: 40rem; 
+    background-size: cover; 
+    background-position: center; 
+    border-bottom: 1px solid var(--text-color);
+}
+
+.movieInfo {
+    padding: 10px;
+    text-align: center;
+}
+
+.movieInfo h3 {
+    color: var(--text-color);
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+
+.movieInfo p {
+    font-size: 1rem;
+    color: var(--text-color);
+    margin: 0.2rem 0;
+}
+
+.movieAbout {
+    font-size: 1rem;
+    color: var(--text-color);
+    text-align: center;
+    max-height: 0; 
+    overflow: hidden; 
+    transition: max-height 0.3s ease; 
+}
+
+.movieCard:hover .movieAbout {
+    max-height: 300px; 
+}
+
+.star-icon {
+    font-size: 16px; 
+    color: gray; 
+    cursor: pointer; 
+    transition: color 0.3s ease; 
+    vertical-align: middle; 
+    margin-right: 5px; 
+}
+
+.star-icon.clicked {
+    color: gold; 
+}
+
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: var(--footer-bg);
+    color: var(--text-color);
+}
+
+.hidden {
+    display: none;
+}
+
+.carousel {
+    display: flex;
+    overflow: hidden; /* Hide overflowing items */
+    position: relative;
+}
+
+.carousel-inner {
+    display: flex;
+    transition: transform 0.3s ease;
+}
+
+.carousel-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(255, 255, 255, 0.8);
+    border: none;
+    padding: 0.5rem;
+    cursor: pointer;
+}
+
+.prev-button {
+    left: 10px; /* Adjust position */
+}
+
+.next-button {
+    right: 10px; /* Adjust position */
+}
+
+.movieCard {
+    min-width: 300px; /* Adjust according to your preference */
+    margin: 0 10px; /* Space between cards */
+}
+
+@media (max-width: 475px) {
+    .movie-list div {
+        width: 90%;
+    }
+}

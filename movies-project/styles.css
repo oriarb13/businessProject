@@ -1,16 +1,71 @@
 :root {
-    --blue-bgc: rgb(50, 50, 50); /* אפור כהה */
-    --Dark-blue: rgb(20, 20, 20); /* כמעט שחור */
-    --footer-bg: rgb(30, 30, 30); /* אפור כהה */
-    --text-color: rgb(220, 220, 220); /* טקסט אפור בהיר */
-    --hover-color: rgb(80, 80, 80); /* אפור בינוני להHover */
+    --grey-bgc: rgb(50, 50, 50); 
+    --dark-blue-nav: rgb(20, 20, 20); 
+    --grey-main-bgc: rgb(30, 30, 30); 
+    --text-color: rgb(220, 220, 220);
+    --hover-color: rgb(80, 80, 80); 
+    --light-text-color: rgb(0, 0, 0); 
+    --light-background: rgb(255, 255, 255); 
+    --light-grey-main-bgc: rgb(240, 240, 240);
+    --gold-color: gold; 
+    --gradient-start: rgba(255, 215, 0, 0.8);
+    --gradient-end: rgba(255, 165, 0, 0.8);
+    --light-bg: #f4f4f4; 
+    --header-color: #0056b3;
+    --text-dark: #333;
 }
+/* ///////////////light mode */
+body.light-mode {
+    background-color: var(--light-background);
+    color: var(--light-text-color);
+}
+
+body.light-mode nav {
+    background-color: var(--light-grey-main-bgc);
+}
+
+body.light-mode .carousel-item {
+    background-color: white; 
+}
+
+body.light-mode .movieCard {
+    background-color: white; 
+}
+
+body.light-mode footer {
+    background-color: var(--gold-color);
+    color: var(--text-dark);
+}
+
+body.light-mode .card-back1,.card-back {
+    color: var(--text-color);
+}
+
+body.light-mode main {
+    background-color: var(--text-color);
+}
+
+
+
+#theme-toggle,#exitBtn{
+    font-size: 4rem;
+    cursor: pointer;
+    
+}
+.nav-btns{
+    height: fit-content;
+    margin-right: 8%;
+    display: flex;
+    gap: 5rem;
+}
+
+
 
 body {
     font-family: Arial, sans-serif;
     color: var(--text-color);
-    width: 70%;
 }
+
 
 * {
     box-sizing: border-box;
@@ -20,18 +75,25 @@ body {
 
 html, body { 
     height: 100%; 
-    background-color: var(--footer-bg);
+    background-color: var(--grey-main-bgc);
+}
+
+main {
+    margin-top: 4rem;
 }
 
 nav {
-    position: sticky;
+    position: fixed;
     top: 0;
-    background-color: var(--Dark-blue);
+    background-color: var(--dark-blue-nav);
     padding: 1rem 0;
     width: 100%;
     z-index: 1000;
 }
 
+main h1 {
+    margin-block: 6rem;
+}
 nav ul {
     list-style: none;
     padding: 0;
@@ -40,30 +102,188 @@ nav ul {
 }
 
 nav ul li {
-    margin: 0 1rem;
+    margin: 0 5%;
     cursor: pointer; 
+    font-size: 4rem;
 }
 
 nav ul li a {
-    color: var(--text-color);
     text-decoration: none;
 }
 
+#searchName-input {
+    font-size: 3.5rem;
+}
+
+#searchName-button {
+    font-size: 3.5rem;
+}
+
 main {
-    background-color: var(--blue-bgc);
+    background-color: var(--grey-bgc);
+    display: flex;
+    flex-direction: column;
+}
+
+main #top-rated h1 {
+    margin-bottom: 2rem;
+}
+
+.carousel-container {
+    align-self: center;
+    position: relative;
+    width: 1400px;
+    height: 2640px;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.carousel {
+    display: flex;
+}
+
+.carousel-item {
+    min-width: 100%;
+    height: 2400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-inline: 3rem;
+    padding-block: 3rem;
+    border-radius: 1rem;
+    background-color: var(--dark-blue-nav);
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease;
+}
+
+.carousel-item img {
+    width: 100%;
+    object-fit: cover;
+}
+
+.card-front1 {
+    width: 100%;
+    height: 100%; 
+    display: flex;
+    align-items: center; 
+}
+
+.card-inner1 {
+    position: relative;
+    width: 100%;
+    height: 80%;
+    transform-style: preserve-3d; 
+    transition: transform 0.6s; 
+}
+
+.carousel-item:hover .card-inner1 {
+    transform: rotateY(180deg);
+}
+
+.card-back1 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    backface-visibility: hidden; 
+    transform: rotateY(180deg); 
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--dark-blue-nav);
+    padding: 10px;
+    text-align: center; 
+    opacity: 0.9;
+    font-size: 3rem;
+}
+
+.carousel-item:hover {
+    transform: scale(1.05);
+    background-color: var(--hover-color); 
+}
+
+.movie-image1 {
+    width: 100%; 
+    height: 100%; 
+    background-size: cover; 
+    background-position: center; 
+    border-bottom: 1px solid var(--text-color);
+    border-radius: 1rem;
+}
+
+.movieInfo1 p {
+    font-size: 4rem;
+    padding: 10px;
+    text-align: center;
+}
+
+.carousel-item h3 {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+}
+
+.movieAbout1 {
+    margin-top: 4rem;
+    line-height: 1.5;
+}
+
+.number {
+    font-size: 4rem;
+    color: var(--gold-color); 
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); 
+    background: linear-gradient(90deg, var(--gradient-start), var(--gradient-end)); 
+    border-radius: 1rem; 
+    padding: 20px;
+}
+
+.carousel-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: black;
+    border: none;
     color: white;
+    font-size: 2rem;
+    cursor: pointer;
+    padding: 10px;
+    z-index: 100;
+}
+
+.prev-button {
+    left: 10px;
+}
+
+.next-button {
+    right: 10px;
 }
 
 h1 {
+    font-size: 6rem;
     text-align: center;
     padding: 4rem 0 1rem;
     position: sticky;
 }
 
+#movie-filter {
+    margin-left: 5rem;    
+    font-size: 3rem;
+    width: fit-content;
+}
+
+main h2 {
+    font-size: 4rem;
+    margin-top: 4rem;
+    align-self: center;
+}
+
 .container {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr)); 
-    gap: 5rem; 
+    grid-template-columns: repeat(auto-fill, minmax(900px, 1fr)); 
+    gap: 10rem; 
     justify-items: center; 
     padding: 10rem;
 }
@@ -72,11 +292,43 @@ h1 {
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding-inline: 3rem;
+    padding-block: 3rem;
     border-radius: 1rem;
-    background-color: var(--Dark-blue);
+    background-color: var(--dark-blue-nav);
     overflow: hidden;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
     transition: transform 0.3s ease;
+}
+
+.card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d; 
+    transition: transform 0.6s; 
+}
+
+.movieCard:hover .card-inner {
+    transform: rotateY(180deg);
+}
+
+.card-back {
+    position: absolute;
+    top: 0;
+    left: 0;
+    backface-visibility: hidden; 
+    transform: rotateY(180deg); 
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column; 
+    align-items: center; 
+    background-color: var(--dark-blue-nav);
+    padding: 10px;
+    text-align: center; 
+    opacity: 0.9; 
+    font-size: 3rem;
 }
 
 .movieCard:hover {
@@ -85,62 +337,111 @@ h1 {
 }
 
 .movie-image {
-    width: 100%; 
-    height: 40rem; 
+    width: 900px; 
+    height: 80rem; 
     background-size: cover; 
     background-position: center; 
     border-bottom: 1px solid var(--text-color);
+    border-radius: 1rem;
 }
 
-.movieInfo {
+.movieInfo p {
+    font-size: 4rem;
     padding: 10px;
     text-align: center;
 }
 
-.movieInfo h3 {
-    color: var(--text-color);
-    font-size: 1.2rem;
-    margin-bottom: 0.5rem;
-}
-
-.movieInfo p {
-    font-size: 1rem;
-    color: var(--text-color);
-    margin: 0.2rem 0;
+.movieCard h3 {
+    font-size: 4rem;
+    margin-bottom: 1rem;
 }
 
 .movieAbout {
-    font-size: 1rem;
-    color: var(--text-color);
-    text-align: center;
-    max-height: 0; 
-    overflow: hidden; 
-    transition: max-height 0.3s ease; 
-}
-
-.movieCard:hover .movieAbout {
-    max-height: 300px; 
+    margin-top: 4rem;
+    line-height: 1.5;
 }
 
 .star-icon {
-    font-size: 16px; 
+    font-size: 60px; 
     color: gray; 
     cursor: pointer; 
     transition: color 0.3s ease; 
     vertical-align: middle; 
-    margin-right: 5px; 
+    margin-right: 2rem; 
 }
 
 .star-icon.clicked {
-    color: gold; 
+    color: var(--gold-color); 
 }
 
 footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    font-size: 4rem;
     text-align: center;
-    padding: 10px;
-    background-color: var(--footer-bg);
-    color: var(--text-color);
+    padding: 3rem;
+    background-color: var(--grey-bgc);
+    width: 100%;
+    background-color: var(--gradient-end);
 }
+
+.hidden {
+    display: none;
+}
+
+#about-page {
+    padding: 2rem;
+    background-color: var(--light-bg); 
+    color: var(--dark-blue-nav);
+    border-radius: 8px; 
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    max-width: 1400px;
+    margin: auto;
+    margin-bottom: 15rem;
+}
+
+#about-title {
+    font-size: 6rem;
+    color: var(--header-color);
+    text-align: center;
+}
+
+#about-story-title,
+#about-offer-title,
+#about-vision-title,
+#about-join-title {
+    font-size: 2.5rem;
+    color: var(--text-dark); 
+    margin-top: 1.5rem;
+}
+
+#about-intro,
+#about-story,
+#about-offer-intro,
+#about-vision,
+#about-join-intro,
+#about-thank-you,
+#about-final-thank-you {
+    font-size: 2.2rem;
+    line-height: 1.6;
+    margin: 1rem 0;
+}
+
+#about-offer-list {
+    margin: 1rem 0;
+    padding-left: 1.5rem;
+}
+
+#about-offer-list li {
+    font-size: 2rem;
+    margin: 0.5rem 0;
+}
+
+
+
+
+
 
 @media (max-width: 475px) {
     .movie-list div {

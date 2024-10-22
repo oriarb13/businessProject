@@ -6,34 +6,25 @@ let selectedValue = 'week';
 const weekDayTitle = document.getElementById('week/day');
 
 const topRatedList = document.getElementById("top-rated-list");
-const prevBtn = document.getElementById(`prev`)
-const nextBtn = document.getElementById(`next`)
-
 
 const movieList = document.getElementById('movie-list');
-let num=0;
 
 const favorites_STORAGE_KEY = 'favorites';
 const favorites = utils.getFromStorage(favorites_STORAGE_KEY) || [];
 
 const favoriteEl = document.getElementById('favorites');
 const homeEl = document.getElementById('home');
-const aboutEl = document.getElementById('about');
-
 const moviesTitleEl = document.getElementById("moovies-title");
 
 const searchNameInput = document.getElementById('searchName-input');
 const searchNameButton = document.getElementById('searchName-button');
 
-let topList=0;
+
 let currentIndex = 0
 const carousel = document.querySelector(".carousel")
 const carouselItems = document.querySelectorAll(".carousel-item")
 const carouselContainer = document.getElementById("top-rated");
-const aboutPageEl = document.getElementById("about-page");
 
-const themeToggleButton = document.getElementById('theme-toggle');
-const exitBtn = document.getElementById("exitBtn");
 
 //home page
 function homePage() {
@@ -48,16 +39,14 @@ const updateCarousel = () => {
     carousel.style.transform = `translateX(${-currentIndex * 100}%)`
 }
 
-nextBtn.addEventListener("click", () => {
-    currentIndex = (currentIndex === topList - 1) ? 0 : currentIndex + 1;
+document.querySelector(".next-button").addEventListener("click", () => {
+    currentIndex = (currentIndex === carouselItems.length - 1) ? 0 : currentIndex + 1;
     console.log(currentIndex);
-    console.log(topList);
-    
     updateCarousel()
 })
 
-prevBtn.addEventListener("click", () => {
-    currentIndex = (currentIndex === 0) ? topList - 1 : currentIndex - 1;
+document.querySelector(".prev-button").addEventListener("click", () => {
+    currentIndex = (currentIndex === 0) ? carouselItems.length - 1 : currentIndex - 1;
     console.log(currentIndex);
     updateCarousel()
 })
@@ -116,20 +105,13 @@ function renderTopMovies(movies) {
     topRatedList.innerHTML = '';
     
     movies.forEach(movie => {
-        topList++;
         const movieDiv = createTopMovieCard(movie);
         topRatedList.appendChild(movieDiv);
-
-        //call movie page func
-        movieDiv.addEventListener(`click`,()=>{
-            moviePage(movie);
-        })
     });
 }
 
 //renderr movies
 function renderMovies(movies) {
-    num=0;
     movieList.innerHTML = '';
     
     movies.forEach(movie => {
@@ -144,32 +126,24 @@ function createTopMovieCard(movie) {
     const imageUrl = `https://image.tmdb.org/t/p/w500${movie.poster_path}`;
     movieDiv.classList.add('carousel-item');
     
-    num++;
     movieDiv.innerHTML = `
     <h3>
-        <span class="star-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" width="40" height="40">
-            <path d="M12 .587l3.668 7.568 8.343 1.215-6.033 5.832 1.423 8.284L12 18.897l-7.4 3.888 1.423-8.284-6.033-5.832 8.343-1.215z"/>
-            </svg>
-        </span>
-        ${movie.title}
+    <span class="star-icon">
+    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" width="40" height="40">
+    <path d="M12 .587l3.668 7.568 8.343 1.215-6.033 5.832 1.423 8.284L12 18.897l-7.4 3.888 1.423-8.284-6.033-5.832 8.343-1.215z"/>
+    </svg>
+    </span>
+    ${movie.title}
     </h3>
-    <div class="movieInfo1">
-        <p>Release Date: ${movie.release_date}</p>
-        <p class="rate">Rating: ${movie.vote_average}</p>
-    </div>
-
-    <div class="card-inner1">
-        <div class="card-front1">
-            <div class="movie-image1" style="background-image: url('${imageUrl}');"></div>
-        </div>
-        <div class="card-back1">
-            <div class="movieAbout1">${movie.overview}</div>
+    <div class="movie-image" style="background-image: url('${imageUrl}');">
+        <div class="movieInfo">
+            <p>Release Date: ${movie.release_date}</p>
+            <p class="rate">Rating: ${movie.vote_average}</p>
+            <div class="movieAbout">${movie.overview}</div>
         </div>
     </div>
-    <div class="number">number ${num}</div>
-
     `;
+    
     
     //star icon
     const starIcon = movieDiv.querySelector('.star-icon');
@@ -188,40 +162,34 @@ function createMovieCard(movie) {
     const movieDiv = document.createElement('div');
     const imageUrl = `https://image.tmdb.org/t/p/w500${movie.poster_path}`;
     movieDiv.classList.add('movieCard');
-    
+
     movieDiv.innerHTML = `
     <h3>
-    <span class="star-icon">
-    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" width="50" height="50">
-    <path d="M12 .587l3.668 7.568 8.343 1.215-6.033 5.832 1.423 8.284L12 18.897l-7.4 3.888 1.423-8.284-6.033-5.832 8.343-1.215z"/>
-    </svg>
-    </span>
-    ${movie.title}
+        <span class="star-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" width="40" height="40">
+                <path d="M12 .587l3.668 7.568 8.343 1.215-6.033 5.832 1.423 8.284L12 18.897l-7.4 3.888 1.423-8.284-6.033-5.832 8.343-1.215z"/>
+            </svg>
+        </span>
+        ${movie.title}
     </h3>
-    
-    <div class="card-inner">
-        <div class="card-front">
-            <div class="movie-image" style="background-image: url('${imageUrl}');"></div>
-        </div>
-        <div class="card-back">
-            <div class="movieInfo">
-                <p>Release Date: ${movie.release_date}</p>
-                <p class="rate">Rating: ${movie.vote_average}</p>
+        <div class="card-inner">
+            <div class="card-front">
+                <div class="movie-image" style="background-image: url('${imageUrl}');"></div>
             </div>
+            <div class="card-back">
                 <div class="movieAbout">${movie.overview}</div>
+            </div>
         </div>
-    </div>
     `;
-    
-    
-    //star icon
+
+    // עדכון כוכב
     const starIcon = movieDiv.querySelector('.star-icon');
     updateStarIcon(starIcon, movie);
-    
+
     starIcon.addEventListener('click', () => {
         toggleFavorite(movie, starIcon);
     });
-    
+
     return movieDiv;
 }
 
@@ -233,12 +201,11 @@ function updateStarIcon(starIcon, movie) {
 
 function toggleFavorite(movie, starIcon) {
     starIcon.classList.toggle('clicked');
-///insert to the top list    
+    
     const existingIndex = favorites.findIndex(item => item.id === movie.id);
     if (existingIndex === -1) {
         favorites.push(movie);
     } else {
-        //takeout from top list
         favorites.splice(existingIndex, 1);
     }
     
@@ -254,39 +221,21 @@ selectPopular.addEventListener("change", () => {
     weekDayTitle.innerHTML= selectPopular.value === 'daily' ? 'daily top movies' : 'weekly top movies'
 });
 
-//fav list
+//
 favoriteEl.addEventListener("click",() => {
     renderMovies(favorites)
     moviesTitleEl.innerHTML=`Favorites movies`
     hideElement(selectPopular)
     hideElement(weekDayTitle)
-    hideElement(carouselContainer)
-    showElement(movieList)
-    hideElement(aboutPageEl)
     
 });
 
-
-//home page
 homeEl.addEventListener("click",() => {
     homePage()
     showElement(selectPopular)
     showElement(weekDayTitle)
     showElement(carouselContainer)
-    showElement(movieList)
-    hideElement(aboutPageEl)
 });
-
-
-//about page
-aboutEl.addEventListener(`click`,() =>{
-    hideElement(selectPopular)
-    hideElement(weekDayTitle)
-    hideElement(carouselContainer)
-    hideElement(movieList)
-    showElement(aboutPageEl)
-
-})
 
 //hidden func
 function hideElement(el) {
@@ -325,7 +274,7 @@ const searchMovies = async (nameValue) => {
     try {
         const response = await axios.request(options);
         const movies = response.data.results;
-        renderMovies(movies);  
+        renderMovies(movies);  // Render the search results
         hideElement(carouselContainer)
         hideElement(selectPopular)
         hideElement(weekDayTitle)
@@ -335,30 +284,5 @@ const searchMovies = async (nameValue) => {
         console.error('Error fetching movies:', error);
     }
 };
-
-//////light mode
-themeToggleButton.addEventListener('click', () => {
-    document.body.classList.toggle('light-mode');
-
-    if (document.body.classList.contains('light-mode')) {
-        themeToggleButton.innerHTML = '<i class="fas fa-moon"></i>';
-    } else {
-        themeToggleButton.innerHTML = '<i class="fas fa-sun"></i>';
-    }
-});
-
-//////exit
-exitBtn.addEventListener('click', () => {
-    window.location.href = 'logIn.html';
-});
-
-
-//movie page
-function moviePage(movie){
-
-
-
-}
-
 
 homePage();

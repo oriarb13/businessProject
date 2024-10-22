@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ori-movies</title>
+    <title>ori-moviesss</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
@@ -11,31 +11,82 @@
     <nav>
         <ul>
             <li id="home">Home</li>
-            <li><a href="about.html">About</a></li>
+            <li id="about">about</li>
             <li id="favorites">Favorites</li>
-            <li>
-                <input type="text" id="searchId-input" placeholder="enter movie id" />
-                <button id="searchId-button">Search</button>
-            </li>
             <li>
                 <input type="text" id="searchName-input" placeholder="enter movie name" />
                 <button id="searchName-button">Search</button>                
             </li>
+            <li class="nav-btns">
+                <button id="theme-toggle" class="theme-button">
+                    <i class="fas fa-sun"></i>
+                </button>
+
+                <button id="exitBtn" class="theme-button">
+                    <i class="fas fa-sign-out-alt"></i>
+                </button> 
+            </li>
+            
             
         </ul>
     </nav>
 
     <main>
-        <h1>Popular Movies</h1>
+        <div id="top-rated" class="carousel-container">
+            <h1>Top Rated Movies</h1>
+            <div id="top-rated-list" class="carousel">
+                <!-- movies  -->
+            </div>
+            <button id="prev" class="carousel-button prev-button">&lt;</button>
+            <button id="next" class="carousel-button next-button">&gt;</button>
+            <!-- <div class="carousel-indicators">
+                <span class="indicator"></span>
+                <span class="indicator"></span>
+                <span class="indicator"></span>
+            </div> -->
+        </div>
+
+        <h1 id="moovies-title">Popular Movies</h1>
         <select id="movie-filter">
             <option value="weekly">Popular of the Week</option>
             <option value="daily">Popular of the Day</option>
         </select>
         
-        <div id="movie-list" class="container">
-            <!-- Movies will be populated here -->
+        <h2 id="week/day">weekly top movies</h2> 
+        <div id="movie-list" class="container">        
+        <!-- moovies -->
         </div>
     </main>
+
+    <div id="about-page" class="hidden">
+        <h1 id="about-title">About Us</h1>
+        <p id="about-intro">Welcome to [Your Website Name], your ultimate destination for everything related to films! Our mission is to bring movie lovers together, offering a platform where you can explore, discover, and enjoy the world of cinema. Whether you're a casual viewer or a passionate cinephile, we have something for everyone.</p>
+    
+        <h2 id="about-story-title">Our Story</h2>
+        <p id="about-story">Founded in [Year], [Your Website Name] began as a simple blog where a few friends shared their love for movies. Over time, we realized that there was a growing community of film enthusiasts eager for a space to connect, share opinions, and find recommendations. This sparked the idea to create a comprehensive website dedicated to movies of all genres—from timeless classics to the latest blockbusters.</p>
+    
+        <h2 id="about-offer-title">What We Offer</h2>
+        <p id="about-offer-intro">At [Your Website Name], we strive to provide our visitors with:</p>
+        <ul id="about-offer-list">
+            <li><strong>Extensive Movie Database:</strong> Browse through our vast collection of movies, complete with detailed information including synopses, cast, crew, ratings, and more. Our database is constantly updated to ensure you have access to the latest releases.</li>
+            <li><strong>In-Depth Reviews:</strong> Our team of passionate writers and film critics provide thoughtful and engaging reviews to help you make informed viewing choices. We cover a range of genres, styles, and themes, ensuring there's something for everyone.</li>
+            <li><strong>User Ratings and Reviews:</strong> We believe in the power of community feedback. Users can rate movies and share their own reviews, creating a vibrant dialogue among film lovers.</li>
+            <li><strong>Curated Lists and Recommendations:</strong> Looking for something to watch? Check out our curated lists featuring themes, genres, and seasonal picks. From "Top 10 Romantic Comedies" to "Must-Watch Sci-Fi Films," we have you covered.</li>
+            <li><strong>News and Updates:</strong> Stay up-to-date with the latest news from the film industry. We cover everything from upcoming releases to industry events, keeping you informed about what's happening in the world of cinema.</li>
+        </ul>
+    
+        <h2 id="about-vision-title">Our Vision</h2>
+        <p id="about-vision">We envision a world where film serves as a bridge connecting diverse cultures, stories, and experiences. Movies have the power to inspire, educate, and entertain. At [Your Website Name], we aim to cultivate a community where film enthusiasts can engage in meaningful discussions and share their passion for storytelling.</p>
+    
+        <h2 id="about-join-title">Join Us</h2>
+        <p id="about-join-intro">We invite you to explore our website and become part of our growing community. Whether you want to find your next favorite film, share your thoughts, or simply enjoy the art of cinema, [Your Website Name] is here for you.</p>
+    
+        <p id="about-thank-you">Feel free to connect with us through our social media channels, share your reviews, and participate in our discussions. Together, let's celebrate the magic of movies!</p>
+    
+        <p id="about-final-thank-you">Thank you for visiting [Your Website Name]. We look forward to sharing this cinematic journey with you!</p>
+    </div>
+    
+
 
     <footer>
         <p>2024, ori arbeli Movies Website</p>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles2.css">
+</head>
+<body>
+    <h1>Welcome to my movies site</h1>
+    
+    <ul>
+        <li><button id="log-in">Log into existing account</button></li>
+        <li><button id="sign-up">Sign up</button></li>
+        <li><button><a href="index.html">Keep going as a guest</a></button></li>
+    </ul>
+    
+    <div id="PIN" class="hidden">
+        <form id="PIN-form">
+            <div id="pin-input">
+                <label for="PIN1">Enter PIN</label>
+                <input name="PIN1" id="PIN1" maxlength="4" required>
+            </div>
+            <div id="name-input">
+                <label for="name">Enter first name</label>
+                <input name="name" id="name" maxlength="10" required>
+            </div>
+            <button type="submit">Log in</button>
+        </form>
+        
+        <p id="validation"></p>
+    </div>
+
+    <div id="sign" class="hidden">
+        <form id="sign-PIN-form">
+            <div id="sign-pin-input">
+                <label for="sign-PIN">Enter PIN</label>
+                <input name="sign-PIN" id="sign-PIN" maxlength="4" required>
+            </div>
+            <div id="name-input">
+                <label for="name-sign">Enter first name</label>
+                <input name="name-sign" id="name-sign" maxlength="10" required>
+            </div>
+            <button id="sign-up-submit" type="submit">Sign up</button>
+        </form>        
+        <p id="validation2"></p>
+    </div>
+
+    <script type="module" src="login.js"></script>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>APi TEST</h1>
+    <ul id="post-list"></ul>
+
+    <form action="">
+        <label for="title">Enter title</label>
+        <input type="text" id="title-input">
+        <label for="content">Enter content</label>
+        <input type="text" id="content-input">
+        <button id="submit-btn">submit</button>
+    </form>
+
+
+    <form id="createPostForm">
+        <input type="text" id="title" placeholder="Title" required>
+        <textarea id="content" placeholder="Content" required></textarea>
+        <button type="submit">Create Post</button>
+    </form>
+    <div id="successMessage" style="color:green;"></div>
+    <div id="errorMessage" style="color:red;"></div>
+    <div id="loading" style="display:none;">Loading...</div>
+
+    <form id="updatePostForm">
+        <input type="text" id="postId" placeholder="Post ID" required>
+        <input type="text" id="newTitle" placeholder="New Title" required>
+        <textarea id="newContent" placeholder="New Content" required></textarea>
+        <button type="submit">Update Post</button>
+    </form>
+
+    <input type="text" id="deletePostId" placeholder="Post ID" required>
+    <button id="deletePostButton">Delete Post</button>
+
+    <div id="postsContainer"></div>
+    <button id="showMoreButton">Show More</button>
+
+    <input type="text" id="search" placeholder="Search by title">
+    <div id="filteredPostsContainer"></div>
+
+    <button id="sortButton">Sort Alphabetically</button>
+
+    
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="./main.js"></script>
+</body>
+</html>

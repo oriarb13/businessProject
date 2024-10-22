@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ori-movies</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <nav>
+        <ul>
+            <li id="home">Home</li>
+            <li><a href="about.html">About</a></li>
+            <li id="favorites">Favorites</li>
+            <li>
+                <input type="text" id="searchId-input" placeholder="enter movie id" />
+                <button id="searchId-button">Search</button>
+            </li>
+            <li>
+                <input type="text" id="searchName-input" placeholder="enter movie name" />
+                <button id="searchName-button">Search</button>                
+            </li>
+            
+        </ul>
+    </nav>
+
+    <main>
+        <h1>Popular Movies</h1>
+        <select id="movie-filter">
+            <option value="weekly">Popular of the Week</option>
+            <option value="daily">Popular of the Day</option>
+        </select>
+        
+        <div id="movie-list" class="container">
+            <!-- Movies will be populated here -->
+        </div>
+    </main>
+
+    <footer>
+        <p>2024, ori arbeli Movies Website</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script type="module" src="index.js"></script>
+</body>
+</html>

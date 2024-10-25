@@ -309,6 +309,8 @@ aboutEl.addEventListener(`click`,() =>{
     hideElement(movieList)
     showElement(aboutPageEl)
     hideElement(wrapWrap)
+    hideElement(moviesTitleEl)
+
 
 })
 

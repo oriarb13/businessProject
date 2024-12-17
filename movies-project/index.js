@@ -9,11 +9,9 @@ const topRatedList = document.getElementById("top-rated-list");
 const prevBtn = document.getElementById(`prev`)
 const nextBtn = document.getElementById(`next`)
 
-
 const movieList = document.getElementById('movie-list');
-let num=0;
 
-const favorites_STORAGE_KEY = 'favorites';
+const favorites_STORAGE_KEY = 'favorites';   
 const favorites = utils.getFromStorage(favorites_STORAGE_KEY) || [];
 
 const favoriteEl = document.getElementById('favorites');
@@ -22,11 +20,6 @@ const aboutEl = document.getElementById('about');
 
 const moviesTitleEl = document.getElementById("moovies-title");
 
-const searchNameInput = document.getElementById('searchName-input');
-const searchNameButton = document.getElementById('searchName-button');
-
-let topList=0;
-let currentIndex = 0
 const carousel = document.querySelector(".carousel")
 const carouselItems = document.querySelectorAll(".carousel-item")
 const carouselContainer = document.getElementById("top-rated");
@@ -34,8 +27,6 @@ const aboutPageEl = document.getElementById("about-page");
 
 const themeToggleButton = document.getElementById('theme-toggle');
 const exitBtn = document.getElementById("exitBtn");
-
-
 
 const mainWrap=document.getElementById("main1")
 
@@ -47,8 +38,16 @@ const rating = document.getElementById('rating3');
 const overview = document.querySelector('#overview3 p');
 const bgImage = document.getElementById('bg-Image3');
 
-const actors = document.getElementById('actors');
+const actorsContainer = document.getElementById('actors');
 const wrapWrap=document.getElementById(`wrap-wrap`)
+
+const searchNameInput = document.getElementById('searchName-input');
+const searchNameButton = document.getElementById('searchName-button');
+
+//global
+let num=0;
+let topList=0;
+let currentIndex = 0
 
 //home page
 function homePage() {
@@ -162,6 +161,7 @@ function createTopMovieCard(movie) {
     const movieDiv = document.createElement('div');
     const imageUrl = `https://image.tmdb.org/t/p/w500${movie.poster_path}`;
     movieDiv.classList.add('carousel-item');
+    //number of top the movie
     num++;
     movieDiv.innerHTML = `
     <h3>
@@ -188,16 +188,40 @@ function createTopMovieCard(movie) {
     <div class="number">number ${num}</div>
 
     `;
-    
-    //star icon
+
     const starIcon = movieDiv.querySelector('.star-icon');
     updateStarIcon(starIcon, movie);
-    
-    starIcon.addEventListener('click', () => {
+
+        //star icon
+    starIcon.addEventListener('click', (ev) => {
+        ev.stopPropagation();
         toggleFavorite(movie, starIcon);
     });
     
     return movieDiv;
+}
+
+//is fav?
+function updateStarIcon(starIcon, movie) {
+    if (favorites.find(item => item.id === movie.id)) {
+        starIcon.classList.add('clicked');
+    }
+}
+
+//toggle fav
+function toggleFavorite(movie, starIcon) {
+    starIcon.classList.toggle('clicked');
+///insert to the top list    
+    const existingIndex = favorites.findIndex(item => item.id === movie.id);
+    if (existingIndex === -1) {
+        favorites.push(movie);
+    } else {
+        //takeout from top list
+        favorites.splice(existingIndex, 1);
+    }
+    
+    console.log(favorites);
+    utils.saveToStorage(favorites_STORAGE_KEY, favorites);
 }
 
 
@@ -236,32 +260,13 @@ function createMovieCard(movie) {
     const starIcon = movieDiv.querySelector('.star-icon');
     updateStarIcon(starIcon, movie);
     
-    starIcon.addEventListener('click', () => {
+    starIcon.addEventListener('click', (ev) => {
+        ev.stopPropagation();
+
         toggleFavorite(movie, starIcon);
     });
     
     return movieDiv;
-}
-
-function updateStarIcon(starIcon, movie) {
-    if (favorites.find(item => item.id === movie.id)) {
-        starIcon.classList.add('clicked');
-    }
-}
-
-function toggleFavorite(movie, starIcon) {
-    starIcon.classList.toggle('clicked');
-///insert to the top list    
-    const existingIndex = favorites.findIndex(item => item.id === movie.id);
-    if (existingIndex === -1) {
-        favorites.push(movie);
-    } else {
-        //takeout from top list
-        favorites.splice(existingIndex, 1);
-    }
-    
-    console.log(favorites);
-    utils.saveToStorage(favorites_STORAGE_KEY, favorites);
 }
 
 //slect by week or day
@@ -318,15 +323,18 @@ aboutEl.addEventListener(`click`,() =>{
 function hideElement(el) {
     el.classList.add('hidden');
 }
+
+//show
 function showElement(el) {
     el.classList.remove('hidden');
 }
 
-//search by name
+//search 
 searchNameButton.addEventListener("click", () => {
     let nameValue = searchNameInput.value.trim();
     if (nameValue) {
         searchMovies(nameValue);
+        searchNameInput.value=""
     } else {
     prompt("please enter a movie name.");
     }
@@ -351,12 +359,14 @@ const searchMovies = async (nameValue) => {
     try {
         const response = await axios.request(options);
         const movies = response.data.results;
+        if (movies.length<1) moviesTitleEl.innerHTML=`try another name`
+        else moviesTitleEl.innerHTML=`${nameValue} movies` 
+
         renderMovies(movies);  
         hideElement(carouselContainer)
         hideElement(selectPopular)
         hideElement(weekDayTitle)
         hideElement(wrapWrap)
-        moviesTitleEl.innerHTML=`${nameValue} movies`
 
     } catch (error) {
         console.error('Error fetching movies:', error);
@@ -382,9 +392,8 @@ exitBtn.addEventListener('click', () => {
 
 
 
-//actors render
+//render actors
 function displayActors(cast) {
-    const actorsContainer = document.getElementById('actors');
     actorsContainer.innerHTML = ''; 
 
     cast.forEach(actor => {
@@ -394,7 +403,7 @@ function displayActors(cast) {
         const actorName = document.createElement('h3');
         actorName.textContent = actor.name;
 
-        const profilePath = actor.profile_path ? `https://image.tmdb.org/t/p/w500${actor.profile_path}` : 'no-image.jpg'; // תמונה ברירת מחדל
+        const profilePath = actor.profile_path ? `https://image.tmdb.org/t/p/w500${actor.profile_path}` : '/images/none.png'; 
         const actorImage = document.createElement('img');
         actorImage.src = profilePath;
         actorImage.alt = actor.name;
@@ -419,6 +428,8 @@ function moviePage(movie) {
     rating.textContent = `Rating: ${movie.vote_average}`;
     overview.textContent = movie.overview;
     document.getElementById('bg-Image3').style.backgroundImage = `url('https://image.tmdb.org/t/p/original${movie.poster_path}')`;
+
+
     //trailer
     const options = {
         method: 'GET',
@@ -435,7 +446,10 @@ function moviePage(movie) {
             const trailers = res.data.results;
             trailer.innerHTML = ''; 
             if (trailers.length > 0) {
-                trailer.innerHTML = `<iframe width="560" height="800" src="https://www.youtube.com/embed/${trailers[0].key}" frameborder="0" allowfullscreen></iframe>`;
+                trailer.innerHTML = `<iframe width=900" height="1100" src="https://www.youtube.com/embed/${trailers[0].key}" frameborder="0" allowfullscreen></iframe>`;
+                console.log(trailers[0].key);
+                console.log("https://www.youtube.com/embed/${trailers[0].key}")
+                
             } else {
                 trailer.textContent = 'No trailer available.';
             }
@@ -455,11 +469,12 @@ function moviePage(movie) {
             Authorization: `Bearer ${API_KEY}`
         }
     };
-    //take the actors
+
+    // actors
     axios.request(creditsOptions)
         .then(res => {
             const cast = res.data.cast; 
-            displayActors(cast); //act render func
+            displayActors(cast); 
         })
         .catch(err => {
             console.error(err);

@@ -1,0 +1,270 @@
+{
+  "recipes": [
+    {
+      "id": "1",
+      "title": "Pancakes",
+      "image": "https://cdn.pixabay.com/photo/2017/05/07/08/56/pancakes-2291908_1280.jpg",
+      "category": "Breakfast",
+      "difficulty": "Medium",
+      "ingredients": [
+        "1 cup all-purpose flour",
+        "2 tbsp sugar",
+        "1 tsp baking powder",
+        "1/2 tsp salt",
+        "1 cup milk",
+        "1 egg",
+        "2 tbsp melted butter"
+      ],
+      "instructions": "Mix dry ingredients. Add wet ingredients and stir. Cook on a greased pan over medium heat.",
+      "created_at": "2024-12-12T10:00:00Z"
+    },
+    {
+      "id": "2",
+      "title": "Spaghetti Bolognese",
+      "image": "https://cdn.pixabay.com/photo/2017/05/07/08/56/pancakes-2291908_1280.jpg",
+      "category": "Dinner",
+      "difficulty": "Medium",
+      "ingredients": [
+        "200g spaghetti",
+        "1 onion, chopped",
+        "2 cloves garlic, minced",
+        "500g ground beef",
+        "1 can tomato sauce",
+        "Salt and pepper to taste",
+        "Fresh basil for garnish"
+      ],
+      "instructions": "Cook spaghetti. Sauté onion and garlic, add beef and cook. Add tomato sauce and simmer. Serve with spaghetti.",
+      "created_at": "2024-12-12T10:15:00Z"
+    },
+    {
+      "id": "3",
+      "title": "Grilled Salmon",
+      "image": "https://cdn.pixabay.com/photo/2017/05/07/08/56/pancakes-2291908_1280.jpg",
+      "category": "Dinner",
+      "difficulty": "Hard",
+      "ingredients": [
+        "2 salmon fillets",
+        "1 tbsp olive oil",
+        "1 tsp garlic powder",
+        "1 tsp paprika",
+        "Salt and pepper to taste",
+        "Lemon wedges"
+      ],
+      "instructions": "Rub salmon with olive oil and spices. Grill on medium-high heat for 6-8 minutes per side. Serve with lemon wedges.",
+      "created_at": "2024-12-12T10:00:00Z"
+    },
+    {
+      "id": "4",
+      "title": "Caesar Salad",
+      "image": "https://cdn.pixabay.com/photo/2017/05/07/08/56/pancakes-2291908_1280.jpg",
+      "category": "Lunch",
+      "difficulty": "Easy",
+      "ingredients": [
+        "2 cups romaine lettuce",
+        "1/2 cup croutons",
+        "1/4 cup parmesan cheese",
+        "2 tbsp Caesar dressing"
+      ],
+      "instructions": "Toss lettuce with dressing, croutons, and parmesan.",
+      "created_at": "2024-12-12T10:30:00Z"
+    },
+    {
+      "id": "5",
+      "title": "Chicken Tacos",
+      "image": "https://cdn.pixabay.com/photo/2017/05/07/08/56/pancakes-2291908_1280.jpg",
+      "category": "Dinner",
+      "difficulty": "Medium",
+      "ingredients": [
+        "2 chicken breasts",
+        "1 tbsp taco seasoning",
+        "4 taco shells",
+        "1/4 cup shredded cheese",
+        "1/4 cup salsa",
+        "Lettuce, sour cream"
+      ],
+      "instructions": "Cook chicken with taco seasoning. Shred and serve in taco shells with toppings.",
+      "created_at": "2024-12-12T10:45:00Z"
+    },
+    {
+      "id": "6",
+      "title": "Vegetable Stir Fry",
+      "image": "https://cdn.pixabay.com/photo/2017/05/07/08/56/pancakes-2291908_1280.jpg",
+      "category": "Lunch",
+      "difficulty": "Easy",
+      "ingredients": [
+        "1 cup mixed vegetables",
+        "2 tbsp soy sauce",
+        "1 tsp sesame oil",
+        "1 garlic clove, minced"
+      ],
+      "instructions": "Stir fry vegetables with garlic and sesame oil. Add soy sauce and cook for another minute.",
+      "created_at": "2024-12-12T11:00:00Z"
+    },
+    {
+      "id": "7",
+      "title": "Beef Burger",
+      "image": "https://cdn.pixabay.com/photo/2017/05/07/08/56/pancakes-2291908_1280.jpg",
+      "category": "Dinner",
+      "difficulty": "Medium",
+      "ingredients": [
+        "1 lb ground beef",
+        "4 burger buns",
+        "Lettuce, tomato, cheese",
+        "Salt and pepper to taste"
+      ],
+      "instructions": "Shape beef into patties. Grill or pan-fry to desired doneness. Serve on buns with toppings.",
+      "created_at": "2024-12-12T11:15:00Z"
+    },
+    {
+      "id": "8",
+      "title": "Veggie Pizza",
+      "image": "https://cdn.pixabay.com/photo/2017/05/07/08/56/pancakes-2291908_1280.jpg",
+      "category": "Dinner",
+      "difficulty": "Medium",
+      "ingredients": [
+        "1 pizza dough",
+        "1/2 cup tomato sauce",
+        "1/4 cup shredded cheese",
+        "1/2 cup mixed vegetables"
+      ],
+      "instructions": "Top dough with sauce, cheese, and veggies. Bake at 375°F for 15 minutes.",
+      "created_at": "2024-12-12T11:30:00Z"
+    },
+    {
+      "id": "9",
+      "title": "Mushroom Risotto",
+      "image": "https://cdn.pixabay.com/photo/2017/05/07/08/56/pancakes-2291908_1280.jpg",
+      "category": "Dinner",
+      "difficulty": "Hard",
+      "ingredients": [
+        "1 cup arborio rice",
+        "2 cups mushroom broth",
+        "1/2 cup parmesan cheese",
+        "1/2 cup mushrooms, sliced"
+      ],
+      "instructions": "Sauté mushrooms, then add rice and broth. Stir frequently until rice is tender. Add cheese and serve.",
+      "created_at": "2024-12-12T11:45:00Z"
+    },
+    {
+      "id": "10",
+      "title": "Apple Pie",
+      "image": "https://cdn.pixabay.com/photo/2017/05/07/08/56/pancakes-2291908_1280.jpg",
+      "category": "Dessert",
+      "difficulty": "Medium",
+      "ingredients": [
+        "2 cups apple slices",
+        "1 cup sugar",
+        "1 tbsp cinnamon",
+        "1 pie crust"
+      ],
+      "instructions": "Fill pie crust with apples and sugar mix. Bake at 350°F for 45 minutes.",
+      "created_at": "2024-12-12T12:00:00Z"
+    },
+    {
+      "id": "11",
+      "title": "Tomato Soup",
+      "image": "https://cdn.pixabay.com/photo/2017/05/07/08/56/pancakes-2291908_1280.jpg",
+      "category": "Lunch",
+      "difficulty": "Easy",
+      "ingredients": [
+        "2 cups tomato puree",
+        "1 cup vegetable broth",
+        "1/4 cup cream",
+        "Salt and pepper to taste"
+      ],
+      "instructions": "Heat tomato puree and broth. Stir in cream and seasonings. Serve warm.",
+      "created_at": "2024-12-12T12:15:00Z"
+    },
+    {
+      "id": "12",
+      "title": "Chicken Parmesan",
+      "image": "https://cdn.pixabay.com/photo/2017/05/07/08/56/pancakes-2291908_1280.jpg",
+      "category": "Dinner",
+      "difficulty": "Hard",
+      "ingredients": [
+        "2 chicken breasts",
+        "1 cup marinara sauce",
+        "1/2 cup mozzarella cheese",
+        "1/4 cup parmesan cheese"
+      ],
+      "instructions": "Bread chicken breasts, fry, then top with sauce and cheese. Bake until cheese melts.",
+      "created_at": "2024-12-12T12:30:00Z"
+    },
+    {
+      "id": "13",
+      "title": "Chocolate Cake",
+      "image": "https://cdn.pixabay.com/photo/2017/05/07/08/56/pancakes-2291908_1280.jpg",
+      "category": "Dessert",
+      "difficulty": "Hard",
+      "ingredients": [
+        "1 cup flour",
+        "1/2 cup cocoa powder",
+        "1 cup sugar",
+        "1/2 cup butter",
+        "2 eggs"
+      ],
+      "instructions": "Mix ingredients, pour into pan, bake at 350°F for 30 minutes.",
+      "created_at": "2024-12-12T12:45:00Z"
+    },
+    {
+      "id": "14",
+      "title": "Fried Rice",
+      "image": "https://cdn.pixabay.com/photo/2017/05/07/08/56/pancakes-2291908_1280.jpg",
+      "category": "Lunch",
+      "difficulty": "Medium",
+      "ingredients": [
+        "2 cups rice",
+        "1/2 cup mixed vegetables",
+        "2 eggs",
+        "1 tbsp soy sauce"
+      ],
+      "instructions": "Cook rice, then stir fry with vegetables, eggs, and soy sauce.",
+      "created_at": "2024-12-12T13:00:00Z"
+    },
+    {
+      "id": "15",
+      "title": "Baked Ziti",
+      "image": "https://cdn.pixabay.com/photo/2017/05/07/08/56/pancakes-2291908_1280.jpg",
+      "category": "Dinner",
+      "difficulty": "Medium",
+      "ingredients": [
+        "1 lb ziti pasta",
+        "2 cups marinara sauce",
+        "1/2 cup ricotta cheese",
+        "1 cup mozzarella cheese"
+      ],
+      "instructions": "Cook pasta, mix with sauce and ricotta. Top with mozzarella and bake at 375°F for 20 minutes.",
+      "created_at": "2024-12-12T13:15:00Z"
+    },
+    {
+      "id": "7560",
+      "title": "wfwefrever",
+      "image": "https://via.placeholder.com/150",
+      "category": "Lunch",
+      "difficulty": "hard",
+      "created_at": "2024-12-15T12:36:13.325Z",
+      "ingredients": ["ereferferfer"],
+      "instructions": "rfeferferferf"
+    },
+    {
+      "id": "3943",
+      "title": "wedwe",
+      "image": "https://via.placeholder.com/160",
+      "category": "Breakfast",
+      "difficulty": "easy",
+      "created_at": "2024-12-15T12:37:01.791Z",
+      "ingredients": ["wrfewf", "dedwwe", "dwdwedwe"],
+      "instructions": "edwedw"
+    },
+    {
+      "id": "1967",
+      "title": "ewdwedwed",
+      "image": "https://via.placeholder.com/160",
+      "category": "Breakfast",
+      "difficulty": "Medium",
+      "created_at": "2024-12-15T19:30:01.696Z",
+      "ingredients": ["dwedwedw"],
+      "instructions": "ewdwedwe"
+    }
+  ]
+}

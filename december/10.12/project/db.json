@@ -1,0 +1,36 @@
+{
+  "tasks": [
+    {
+      "id": "2",
+      "title": "Team meeting",
+      "description": "Discuss project requirements and deadlines'ד'ד'ד'ד'דז",
+      "dueDate": "2024-12-12",
+      "priority": "Medium",
+      "status": "Completed"
+    },
+    {
+      "id": "3",
+      "title": "Code review",
+      "description": "Review the pull requests from teammates",
+      "dueDate": "2024-12-10",
+      "priority": "Low",
+      "status": "Completed"
+    },
+    {
+      "id": "cjllckoggqe",
+      "title": "vsvd",
+      "description": "vfdgvdbfgbrb",
+      "priority": "High",
+      "dueDate": "2024-12-20",
+      "status": "In Progress"
+    },
+    {
+      "id": "2xwd8b1ftaj",
+      "title": "wwfwerfew",
+      "description": "feferref",
+      "priority": "Medium",
+      "dueDate": "2024-12-24",
+      "status": "Pending"
+    }
+  ]
+}

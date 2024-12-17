@@ -1,0 +1,20 @@
+.Top-Comp1{
+    margin-top: 20px;
+}
+.star-wrap{
+    margin-top: 20px;
+    margin-left: 20px;
+    background-color:hsl(217, 12%, 63%);
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+}
+img{
+    margin-top: 16px;
+    margin-left: 16px;
+}
+
+h1{
+    color: white;
+    font-size: 30px;
+}

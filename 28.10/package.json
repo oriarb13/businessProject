@@ -1,0 +1,24 @@
+{
+  "name": "28.10",
+  "version": "1.0.0",
+  "main": "app.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon app.js"
+  },
+  "keywords": [],
+  "author": "ori",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.21.1",
+    "file": "^0.2.2",
+    "fs": "^0.0.1-security",
+    "mongodb": "^6.10.0",
+    "mongoose": "^8.7.3",
+    "morgan": "^1.10.0",
+    "nodemon": "^3.1.7",
+    "system": "^2.0.1"
+  },
+  "description": ""
+}

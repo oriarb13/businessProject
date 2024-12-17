@@ -1,0 +1,24 @@
+{
+  "compilerOptions": {
+    "target": "ES2020",  // הגדרת גרסת ה-JavaScript שאליה יתורגמו הקבצים
+    "useDefineForClassFields": true,  // מאפשר להגדיר את שדות המחלקה בצורה מדויקת
+    "jsx": "react-jsx",  // הגדרת JSX שתואמת ל-React 17 ומעלה (אם אתה משתמש בגרסה ישנה יותר, השתמש ב-react)
+    "module": "ESNext",  // הגדרת מודולים של ESNext
+    "lib": ["ES2020", "DOM", "DOM.Iterable"],  // הגדרת ספריות עבודה (הדפדפן ו-ES2020)
+    "skipLibCheck": true,  // אם נרצה לדלג על בדיקות סוגים בספריות חיצוניות
+    "moduleResolution": "bundler",  // מאפשר למערכת המודולים של Vite לעבוד בצורה חלקה
+    "allowImportingTsExtensions": true,  // מאפשר ייבוא קבצים עם סיומות ts / tsx
+    "isolatedModules": true,  // משפר את ביצועי המהדר על ידי טיפול בקבצים מבודדים
+    "moduleDetection": "force",  // הוחלט להפעיל זיהוי מודולים בכוח
+    "noEmit": true,  // אל תיצור קבצי JavaScript (שימוש עם Vite שיבצע את ההמרה)
+    
+    /* Linting */
+    "strict": true,  // מצב מחמיר עבור כל בדיקות הסוגים
+    "noUnusedLocals": true,  // שגיאה על משתנים שלא נעשה בהם שימוש
+    "noUnusedParameters": true,  // שגיאה על פרמטרים שלא נעשה בהם שימוש
+    "noFallthroughCasesInSwitch": true,  // לא מאפשר לשכוח את ה-break ב-switch
+    "noUncheckedSideEffectImports": true  // שגיאה אם יש ייבוא עם תופעות לוואי שלא נבדקות
+  },
+  "include": ["src"],  // כולל את כל הקבצים בתיקיית src
+  "exclude": ["node_modules"]  // לא כולל את תיקיית node_modules
+}

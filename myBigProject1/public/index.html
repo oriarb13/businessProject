@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Project Management App</h1>
+    <ul>
+        <form id="getByIdForm">
+            <input type="text" id="id" placeholder="User id" required autocomplete="off">
+            <button type="submit" id="getByIdBtn">get user by id</button>        
+        </form>
+        <button type="button" id="show-random-btn">random User</button>        
+    </ul>
+    
+    <button type="button" id="show-all-btn">show all Users</button>        
+    <!-- Section for Users -->
+    <section id="user-section">
+      <h2>Users</h2>
+      <h3 id="users-situation"></h3>
+      <ul id="user-list">
+        <!-- users -->
+
+     </ul>
+      <form id="create-user-form" autocomplete="on">
+        <input type="text" id="username" placeholder="Username" required autocomplete="username">
+        <input type="email" id="email" placeholder="Email" required autocomplete="email">
+        <input type="password" id="password" placeholder="Password" required autocomplete="new-password">
+        <select id="role" autocomplete="off">
+          <option value="User">User</option>
+          <option value="Admin">Admin</option>
+        </select>
+        <input type="text" id="user-tasks" placeholder="enter tasks" required autocomplete="off">
+        <input type="text" id="user-projects" placeholder="enter projects" required autocomplete="off">
+        <button type="button" id="createBtn">Create User</button>        
+        <button type="button" id="editBtn">edit User</button>
+      </form>
+    </section>
+
+    <script type="module" src="./js/controller.js"> </script>
+</body>
+</html>

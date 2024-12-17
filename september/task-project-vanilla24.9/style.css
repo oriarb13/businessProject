@@ -1,0 +1,279 @@
+:root {
+--white-grey:hsl(210, 46%, 95%);
+--bg-blue: hsl(217, 19%, 35%);
+--form-bg-blue:hsl(216, 21%, 53%);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html{
+    width:100% ;
+}
+body {    
+    font-weight: 400;
+    font-style: normal;
+    letter-spacing: 0.6px;
+    background:var(--bg-blue);
+    color:var(--white-grey);    
+}
+.container{
+    margin-right: auto;
+    margin-left: auto;
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    gap: 1.6rem;
+    
+}
+
+h1{
+    margin-block: 2rem;
+    font-weight: bold;
+}
+h2,h3{
+    font-weight: bold;
+
+}
+h1,h2{
+    text-align: center;
+}
+#employee-form{
+    display: grid;
+    grid-template-columns:repeat(5, 1fr);
+    grid-template-rows:repeat(2, 1fr);
+}
+
+input {
+    font-weight: bold;
+    font-size: 0.6rem;
+    border-radius: 5px;
+    border: none; 
+    width: 5rem;
+}
+#filter-buttons>form>div>input {
+    font-weight: bold;
+    font-size: 0.8rem;
+    border-radius: 5px;
+    border: none; 
+    width: 7rem;
+}
+
+select{
+    font-size: 0.7rem;
+    width: 7rem;
+    margin-right: 0.3rem;
+    appearance: none;
+}
+option{
+    font-size: 3rem;
+}
+#employee-form button {
+    margin-top: 1rem;
+    grid-column: 2 / 5;
+}
+
+form>*{
+    margin-bottom: 0.2rem;
+}
+
+
+.wrap-form{
+    background-color: var(--white-grey);
+    border-radius: 10px;
+    background-color:var(--form-bg-blue);
+    width: fit-content;
+    padding-inline: 0.2rem;
+    padding-block: 1rem;
+    align-self: center;
+    margin-inline: 1rem ;
+}
+
+
+.main-wrap{
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    align-items: center;
+}
+
+#filter-buttons{
+    margin-right: 100%;
+    margin-left: 100%;
+    display: grid;
+    grid-template-columns: repeat(5,1fr);
+    grid-template-rows: 1fr;
+    gap: 0.5rem;
+}
+
+#side-bar{
+    background-color: rgb(38, 71, 85);
+    height: fit-content;
+    position:fixed;
+    bottom: 10px;
+}
+#side-bar{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(38, 71, 85, 0.9);     opacity: 0; 
+    opacity: 1; 
+}
+
+#employee-edit h3{
+    margin-bottom: 3rem;
+}
+#employee-edit>*{
+    margin-bottom: 1.2rem;
+
+}
+
+#employees-cards{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+.card{
+    padding-block: 0.5rem;
+    padding-inline:1rem ;
+    background-color: var(--form-bg-blue);
+    border-radius: 10px;
+}
+.card>*{
+    margin-bottom: 0.4rem;
+}
+
+
+button{
+    padding-block: 8px;
+    padding-inline: 12px;
+    
+    font-size: 0.8rem;
+    border: none;
+    cursor: pointer;
+    
+    background-color: var(--white-grey);
+    color: var(--bg-blue);
+    border-radius: 1.6rem;
+    
+    transition: 50ms cubic-bezier(0, 1.51, 0.89, -0.66);
+}
+
+.delete-btn:hover{
+    color:black;
+    background-color: red;
+}
+button:hover {
+    background-color:hsl(100, 50%, 95%); ;
+    border-radius: 1px;
+    transition: 50ms cubic-bezier(0, 1.51, 0.89, -0.66);
+}
+
+.hidden{
+    display:none;
+}
+
+span{
+    margin-left: 1rem;
+}
+
+
+@media(min-width:940px){
+    body{
+        width: 100%;
+    }
+    h1{
+        font-size: 6rem;
+        margin-top: 4rem;
+    }
+    h2,h3{
+        font-size: 4rem;
+    }
+
+
+    .wrap-form{
+        width: fit-content;
+        padding-inline: 0.2rem;
+        padding-block: 1rem;
+        align-self: center;
+        margin-inline: 1rem ;
+    }
+    
+    input{
+        font-weight: bold;
+        font-size: 3rem;
+        border-radius: 5px;
+        width: fit-content;    
+    }
+
+
+
+    #filter-buttons>form>div>input {
+        font-weight: bold;
+        font-size: 3rem;
+        width: fit-content;
+    }
+
+
+    #employee-form>input{
+        margin-inline: 1rem;
+        font-size: 3rem;
+    }
+
+    select{
+        font-size: 3rem;
+        width: 40rem;
+        margin-right: 0.3rem;
+    }
+
+    option{
+        font-size: 3rem;
+    }
+    
+
+
+
+    button{
+        margin-top: 1rem;
+        padding-block: 2rem;
+        padding-inline: 3rem;
+        font-size: 3rem;
+        margin-inline: 1rem;
+    }
+    
+    #employee-edit h3{
+        font-size: 6rem;
+        margin-bottom: 3rem;
+    }
+    
+    #employee-edit>*{
+        margin-bottom: 2rem;
+        font-size: 4rem;
+        
+    }
+    
+    #employees-cards{
+        display: grid;
+        grid-template-columns:repeat(4, 1fr);
+        gap: 2rem;
+        
+        
+    }
+    .card{
+        font-size: 4rem;
+        padding-block: 2rem;
+    padding-inline:3rem ;
+}
+.card>*{
+    margin-bottom: 2rem;
+}
+
+
+
+
+}

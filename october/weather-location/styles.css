@@ -1,0 +1,62 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f8ff;
+    color: #333;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    margin-top: 50px;
+}
+
+h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+#img img {
+    width: 100px; /* גודל התמונה */
+    height: auto;
+}
+
+#current-day {
+    font-size: 1.5em;
+    margin: 20px 0;
+}
+
+#other-days {
+    margin-top: 30px;
+}
+
+#other-days div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 10px 0;
+}
+
+#other-days img {
+    width: 50px; /* גודל אייקון מזג האוויר */
+    height: auto;
+    margin-right: 10px; /* רווח בין האייקון לשם היום */
+}
+
+span {
+    margin: 0 10px;
+}
+
+@media (max-width: 600px) {
+    h1 {
+        font-size: 2em;
+    }
+
+    #current-day {
+        font-size: 1.2em;
+    }
+
+    #other-days img {
+        width: 40px; /* גודל אייקון קטן יותר למסכים קטנים */
+    }
+}

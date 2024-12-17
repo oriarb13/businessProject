@@ -1,0 +1,48 @@
+:root {
+    --orange: hsl(25, 97%, 53%);
+    --white: hsl(0, 0%, 100%);
+    --light-grey: hsl(217, 12%, 63%);
+    --DarkBlue: hsl(213, 19%, 18%);
+    --VeryDarkBlue: hsl(216, 12%, 8%);
+  
+  }
+  
+  span {
+    cursor: pointer;  
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;  
+    height: 50px; 
+    border-radius: 50%;  
+    margin: 10px;
+    font-size: 20px;  
+    transition: background-color 0.3s ease, border 0.3s ease;
+    background-color: var(--light-grey);  
+    color:var(--white) ;  
+}
+
+span.white-chosen {
+    font-weight: bold;
+    background-color: var(--white); 
+    color:var(--light-grey) ;  
+  }
+  
+  span:hover {
+    background-color: var(--orange);  
+    color:var(--DarkBlue) ;  
+  }
+
+  button{
+    background-color:var(--orange);
+    letter-spacing: 1.6px;
+    font-weight: 400;
+    height: 40px;
+    border-radius: 30px;
+    border: none;
+    width: 90%;
+    margin-block: 26px;
+  }
+  button:hover{
+    background-color: white;
+  }

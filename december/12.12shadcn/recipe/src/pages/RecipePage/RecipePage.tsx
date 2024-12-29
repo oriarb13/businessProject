@@ -90,7 +90,7 @@ const RecipePage = () => {
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-opacity-50">
       <div className="w-full max-w-md p-6 bg-black rounded-lg shadow-lg">
-      <OneRecipe key={recipe.id} recipe={recipe} />
+        <OneRecipe key={recipe.id} recipe={recipe} />
         <button
           onClick={closeModal}
           className="p-2 mt-4 text-black bg-gray-800 rounded-md hover:bg-gray-600"

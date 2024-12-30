@@ -5,25 +5,33 @@ interface AvgProps {
 }
 
 const Avg = ({ id }: AvgProps) => {
-  const { data: reviews, isLoading, isError } = useReviewsByBusinessId(id);
+  const {
+    data: reviews,
+    isLoading,
+    isError,
+    error,
+  } = useReviewsByBusinessId(id);
 
   if (isLoading) {
     return <div>Loading reviews...</div>;
   }
 
   if (isError) {
+    if (error?.response?.status === 404) {
+      return <div>No rating yet.</div>;
+    }
     return <div>Error loading reviews. Please try again later.</div>;
   }
 
   if (!reviews || reviews.length === 0) {
-    return <div>No reviews available for this business.</div>;
+    return <div>No rating yet.</div>;
   }
 
   // calc
   const totalRating = reviews.reduce((sum, review) => sum + review.rating, 0);
   const avgRating = totalRating / reviews.length;
 
-  //  color
+  // color
   const ratingColor =
     avgRating < 2.5
       ? "text-red-500"
@@ -33,7 +41,7 @@ const Avg = ({ id }: AvgProps) => {
 
   return (
     <div className={`text-xl font-bold ${ratingColor}`}>
-      Average Rating: {avgRating.toFixed(1)} ⭐
+      {avgRating.toFixed(1)} ⭐
     </div>
   );
 };

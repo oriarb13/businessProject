@@ -6,6 +6,7 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { Badge } from "@/components/ui/badge";
+import Avg from "./reviews/Avg";
 
 interface BusinessProps {
   business: {
@@ -21,7 +22,6 @@ interface BusinessProps {
 }
 
 const OneBusiness = ({ business }: BusinessProps) => {
-  const { _id } = useParams();
   const location = useLocation();
 
   return (
@@ -35,6 +35,7 @@ const OneBusiness = ({ business }: BusinessProps) => {
           <h1 className="text-lg font-bold text-[hsl(var(--golden-yellow))] dark:text-[hsl(var(--dark-text))]">
             {business.name}
           </h1>
+          <Avg id={business._id} />
           <img
             src={business.img}
             alt={business._id}
@@ -44,15 +45,17 @@ const OneBusiness = ({ business }: BusinessProps) => {
       </div>
       <div className="space-x-2">
         <Badge>Category: {business.category}</Badge>
-        <Badge variant={"secondary"}>since: {business.createdAt}</Badge>
+        <Badge variant={"secondary"}>
+          since: {new Date(business.createdAt).toLocaleDateString("en-GB")}
+        </Badge>{" "}
       </div>
 
       <Accordion type="single" collapsible className="w-full mt-4">
         <AccordionItem value="item-1">
           <AccordionTrigger className="bg-[hsl(var(--dark-blue))] dark:bg-[hsl(var(--dark-accent))] text-[hsl(var(--primary-foreground))]">
-            Description:
+            <div className="text-black">Description:</div>
           </AccordionTrigger>
-          <AccordionContent className="bg-[hsl(var(--dark-gray))] dark:bg-[hsl(var(--dark-bg))] text-[hsl(var(--secondary-foreground))] dark:text-[hsl(var(--dark-text))]">
+          <AccordionContent className="bg-[hsl(var(--dark-gray))]  dark:bg-[hsl(var(--dark-bg))] text-[hsl(var(--secondary-foreground))] dark:text-[hsl(var(--dark-text))]">
             {business.description}
           </AccordionContent>
         </AccordionItem>

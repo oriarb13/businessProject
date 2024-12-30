@@ -7,15 +7,26 @@ import {
   deleteBusiness,
   editBusiness,
   createBusiness,
+  getBusinessesOfOwner,
 } from "@/API/businessAPI";
 import { IBusiness } from "@/types/Type";
 import { useState } from "react";
 
-// all businesses
+
+  // all businesses
 export const useBusinesses = () => {
   return useQuery<IBusiness[], Error>({
     queryKey: ["businesses"],
     queryFn: getAllBusinesses,
+  });
+};
+
+//buisnesses of user
+export const useBusinessesOfOwner = (ownerId: string) => {
+  return useQuery<IBusiness[], Error>({
+    queryKey: ["businesses", ownerId],
+    queryFn: () => getBusinessesOfOwner(ownerId),
+    enabled: !!ownerId,
   });
 };
 

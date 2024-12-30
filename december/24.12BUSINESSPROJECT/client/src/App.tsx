@@ -15,11 +15,12 @@ import NotFound from "./pages/notfound/NotFound";
 import Signup from "./pages/Signup";
 import Login from "./pages/Login";
 import Home from "./pages/Home";
-import BusinessList from "./pages/Businesses";
+import BusinessList from "./pages/BusinessesList";
 import ProfilePage from "./pages/ProfilePage/ProfilePage";
 import BusinessPage from "./pages/BuisnessPage";
 import UserPage from "./pages/UserPage";
 import NewBusiness from "./pages/NewBusiness";
+import SearchPage from "./pages/SearchPage/SearchPage";
 // import SearchPage from "./pages/SearchPage/SearchPage";
 
 function App() {
@@ -45,6 +46,7 @@ function AppContent() {
               <Route path="/" element={<Signup />} />
               <Route path="/login" element={<Login />} />
               <Route path="/home" element={<Home />} />
+              <Route path="/search" element={<SearchPage />} />
               <Route path="/businesses" element={<BusinessList />} />
               <Route path="/create-business" element={<NewBusiness />} />
               {/* <Route path="/search" element={<SearchPage />} /> */}

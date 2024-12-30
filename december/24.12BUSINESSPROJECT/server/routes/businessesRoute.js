@@ -22,7 +22,7 @@ router.get("/", getAllBusinesses);
 router.get("/:id", getBusinessById);
 
 //  businesses of owner
-router.get("/owner/:ownerId", verifyToken, getBusinessesOfOwner);
+router.get("/owner/:ownerId", getBusinessesOfOwner);
 
 // Create
 router.post("/", verifyToken, createBusiness);
@@ -34,7 +34,7 @@ router.put("/:id", verifyToken, editBusiness);
 router.delete("/:id", verifyToken, deleteBusiness);
 
 // Search
-router.get("/search", searchBusinesses);
+router.get('/search', searchBusinesses);
 
 //add business to fav
 router.post("/favorites/add/:businessId", verifyToken, addBusinessToFav);

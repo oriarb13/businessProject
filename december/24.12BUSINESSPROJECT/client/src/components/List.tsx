@@ -77,7 +77,7 @@ const List: React.FC<ListProps> = ({ data }) => {
           <Popover open={open} onOpenChange={setOpen}>
             <PopoverTrigger>
               <div className="mb-2 text-xl font-medium cursor-pointer">
-                Businesses: {data.length}
+                Subscribers: {data.length}
               </div>
             </PopoverTrigger>
             <PopoverContent>

@@ -2,10 +2,17 @@ import axios from "axios";
 import { IBusiness } from "@/types/Type";
 const BASE_URL = `http://localhost:3000/api/businesses`;
 
-interface QueryParams {
-  [key: string]: string;
-}
-
+export const fetchBusinesses = async (
+  search: string,
+  category: string,
+  page: number,
+  limit: number
+) => {
+  const response = await axios.get(`${BASE_URL}/search`, {
+    params: { search, category, page, limit },
+  });
+  return response.data;
+};
 // Get all businesses
 export const getAllBusinesses = async (): Promise<IBusiness[]> => {
   const response = await axios.get(`${BASE_URL}`);
@@ -21,12 +28,9 @@ export const getBusinessById = async (id: string): Promise<IBusiness> => {
 
 // Get businesses of specific owner
 export const getBusinessesOfOwner = async (
-  ownerId: string,
-  token: string
+  ownerId: string
 ): Promise<IBusiness[]> => {
-  const response = await axios.get(`${BASE_URL}/owner/${ownerId}`, {
-    headers: { Authorization: `Bearer ${token}` },
-  });
+  const response = await axios.get(`${BASE_URL}/owner/${ownerId}`, {});
   return response.data;
 };
 
@@ -57,15 +61,17 @@ export const deleteBusiness = async (id: string): Promise<void> => {
     withCredentials: true,
   });
 };
-// Search businesses
-export const searchBusinesses = async (
-  queryParams: QueryParams = {}
-): Promise<IBusiness[]> => {
-  const query = new URLSearchParams(queryParams).toString();
+
+export const searchBusinesses = async (queryParams: {
+  search?: string;
+  category?: string;
+  page?: number;
+  limit?: number;
+}) => {
+  const query = new URLSearchParams(queryParams as any).toString();
   const response = await axios.get(`${BASE_URL}/search?${query}`);
   return response.data;
 };
-
 // Add business to favorites
 export const addBusinessToFavorites = async (
   businessId: string

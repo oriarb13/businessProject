@@ -49,7 +49,7 @@ const NavBar: React.FC = () => {
     <AppBar
       position="fixed"
       sx={{
-        bgcolor: "hsl(12, 33%, 10%)",
+        bgcolor: "hsl(240, 30%, 15%)",
         top: 0,
         width: "100%",
         // marginBottom: "120px",
@@ -73,7 +73,7 @@ const NavBar: React.FC = () => {
               textDecoration: "none",
             }}
           >
-            Instagram
+            businessesearch
           </Typography>
 
           <Box
@@ -120,7 +120,7 @@ const NavBar: React.FC = () => {
               ))}
             </Menu>
           </Box>
-          <AdbIcon sx={{ display: { xs: "flex", md: "none" }, mr: 1 }} />
+          {/* <AdbIcon sx={{ display: { xs: "flex", md: "none" }, mr: 1 }} /> */}
           <Typography
             variant="h5"
             noWrap
@@ -137,7 +137,7 @@ const NavBar: React.FC = () => {
               textDecoration: "none",
             }}
           >
-            white nights
+            businessesearch{" "}
           </Typography>
           <Box
             sx={{

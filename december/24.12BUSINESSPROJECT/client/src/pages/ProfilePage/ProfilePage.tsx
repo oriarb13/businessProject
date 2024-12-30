@@ -5,6 +5,8 @@ import { useUserByUsername } from "@/hooks/tan-stack/useUsers";
 import { useUser } from "@/context/UserContext";
 import EditUser from "@/components/user/EditUser";
 import ChangePlan from "@/components/user/ChangePlan";
+import Businesses from "@/components/Businesses";
+import UserBusinesses from "@/components/UserBusinesses";
 
 const ProfilePage = () => {
   const { user: contextUser } = useUser();
@@ -36,7 +38,7 @@ const ProfilePage = () => {
     : "https://cdn-icons-png.flaticon.com/512/149/149071.png";
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen gap-6 p-6 bg-gray-100">
+    <div className="flex flex-col items-center justify-center min-h-screen gap-6 p-6">
       <Card className="w-full max-w-md p-6 bg-white rounded-lg shadow-md">
         <div className="flex flex-col items-center gap-4">
           <Avatar className="w-32 h-32 shadow-lg">
@@ -88,6 +90,7 @@ const ProfilePage = () => {
           </div>
         </div>
       </Card>
+      <UserBusinesses userId={contextUser?._id} />
     </div>
   );
 };

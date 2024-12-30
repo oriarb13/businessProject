@@ -203,32 +203,30 @@ export const deleteBusiness = async (req, res) => {
   }
 };
 
-// Search businesses
 export const searchBusinesses = async (req, res) => {
-  const { page = 1, limit = 10, search = "", category = "" } = req.query;
+  const { search = "", category = "", page = 1, limit = 10 } = req.query;
 
-  // Define the search query object
   const searchQuery = {};
 
+  // תנאי חיפוש אם יש מילה לחיפוש
   if (search) {
     searchQuery.name = { $regex: search, $options: "i" };
     searchQuery.description = { $regex: search, $options: "i" };
   }
 
+  // אם יש קטגוריה, נוסיף אותה לחיפוש
   if (category) {
     searchQuery.category = { $regex: category, $options: "i" };
   }
 
   try {
-    // Fetch businesses with filters, pagination, and population
     const businesses = await Business.find(searchQuery)
       .populate("owner", "username img")
       .populate("subscribers", "username img")
-      .skip((page - 1) * limit) // Pagination skip
-      .limit(Number(limit)) // Pagination limit
+      .skip((page - 1) * limit)
+      .limit(Number(limit))
       .exec();
 
-    // Fetch total count for pagination
     const totalCount = await Business.countDocuments(searchQuery);
 
     res.status(200).json({

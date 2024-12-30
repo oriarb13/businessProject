@@ -46,7 +46,7 @@ const Login = () => {
     try {
       const data = await signInUser(email, password);
       console.log(data);
-      navigate("/home");
+      navigate("/profile");
     } catch (error) {
       console.error("Error signing in:", error);
     }
@@ -57,8 +57,8 @@ const Login = () => {
   };
 
   return (
-    <div className="max-w-md mx-auto p-6 bg-white shadow-lg rounded-lg">
-      <h2 className="text-xl font-bold mb-4">Sign In</h2>
+    <div className="max-w-md p-6 mx-auto bg-white rounded-lg shadow-lg">
+      <h2 className="mb-4 text-xl font-bold">Sign In</h2>
 
       <div className="mb-4">
         <label htmlFor="email" className="block text-gray-700">
@@ -73,7 +73,7 @@ const Login = () => {
           className="mt-1"
         />
         {emailError && (
-          <div className="flex items-center text-red-600 mt-1 text-sm">
+          <div className="flex items-center mt-1 text-sm text-red-600">
             <MdError className="mr-2" />
             <p>{emailError}</p>
           </div>
@@ -96,13 +96,13 @@ const Login = () => {
           <button
             type="button"
             onClick={() => setShowPassword(!showPassword)}
-            className="absolute right-2 top-2 text-gray-500"
+            className="absolute text-gray-500 right-2 top-2"
           >
             {showPassword ? <FiEyeOff /> : <FiEye />}
           </button>
         </div>
         {passwordError && (
-          <div className="flex items-center text-red-600 mt-1 text-sm">
+          <div className="flex items-center mt-1 text-sm text-red-600">
             <MdError className="mr-2" />
             <p>{passwordError}</p>
           </div>

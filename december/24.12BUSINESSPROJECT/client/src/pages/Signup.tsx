@@ -82,13 +82,10 @@ const SignUp = () => {
     }
   };
 
-  const handleGuestLogin = () => {
-    navigate("/");
-  };
 
   return (
-    <div className="max-w-md mx-auto p-6 bg-white shadow-lg rounded-lg">
-      <h2 className="text-xl font-bold mb-4">Sign Up</h2>
+    <div className="max-w-md p-6 mx-auto bg-white rounded-lg shadow-lg">
+      <h2 className="mb-4 text-xl font-bold">Sign Up</h2>
 
       <div className="mb-4">
         <label htmlFor="username" className="block text-gray-700">
@@ -103,7 +100,7 @@ const SignUp = () => {
           className="mt-1"
         />
         {usernameError && (
-          <div className="flex items-center text-red-600 mt-1 text-sm">
+          <div className="flex items-center mt-1 text-sm text-red-600">
             <MdError className="mr-2" />
             <p>{usernameError}</p>
           </div>
@@ -123,7 +120,7 @@ const SignUp = () => {
           className="mt-1"
         />
         {emailError && (
-          <div className="flex items-center text-red-600 mt-1 text-sm">
+          <div className="flex items-center mt-1 text-sm text-red-600">
             <MdError className="mr-2" />
             <p>{emailError}</p>
           </div>
@@ -146,13 +143,13 @@ const SignUp = () => {
           <button
             type="button"
             onClick={() => setShowPassword(!showPassword)}
-            className="absolute right-2 top-2 text-gray-500"
+            className="absolute text-gray-500 right-2 top-2"
           >
             {showPassword ? <FiEyeOff /> : <FiEye />}
           </button>
         </div>
         {passwordError && (
-          <div className="flex items-center text-red-600 mt-1 text-sm">
+          <div className="flex items-center mt-1 text-sm text-red-600">
             <MdError className="mr-2" />
             <p>{passwordError}</p>
           </div>
@@ -175,13 +172,13 @@ const SignUp = () => {
           <button
             type="button"
             onClick={() => setShowConfirmPassword(!showConfirmPassword)}
-            className="absolute right-2 top-2 text-gray-500"
+            className="absolute text-gray-500 right-2 top-2"
           >
             {showConfirmPassword ? <FiEyeOff /> : <FiEye />}
           </button>
         </div>
         {confirmPasswordError && (
-          <div className="flex items-center text-red-600 mt-1 text-sm">
+          <div className="flex items-center mt-1 text-sm text-red-600">
             <MdError className="mr-2" />
             <p>{confirmPasswordError}</p>
           </div>
@@ -233,7 +230,7 @@ const SignUp = () => {
           className="mt-1"
         />
         {imageError && (
-          <div className="flex items-center text-red-600 mt-1 text-sm">
+          <div className="flex items-center mt-1 text-sm text-red-600">
             <MdError className="mr-2" />
             <p>{imageError}</p>
           </div>
@@ -246,14 +243,7 @@ const SignUp = () => {
         </Button>
       </div>
 
-      <div className="mt-4 flex justify-between">
-        <Button
-          onClick={handleGuestLogin}
-          variant="outline"
-          className="w-full mr-2"
-        >
-          Login as Guest
-        </Button>
+      <div className="flex justify-between mt-4">
         <Button
           onClick={() => navigate("/login")}
           variant="link"

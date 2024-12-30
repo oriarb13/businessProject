@@ -16,6 +16,8 @@ import FavoriteButton from "@/components/FavoriteBtn";
 import { useUser } from "@/context/UserContext";
 import AllReviews from "@/components/reviews/AllReviews";
 import Avg from "@/components/reviews/Avg";
+import EditBusinessDialog from "@/components/EditBusiness";
+import useSocketNotifications from "@/hooks/socket";
 
 const BusinessPage = () => {
   const { theme } = useTheme();
@@ -36,6 +38,8 @@ const BusinessPage = () => {
   }, [theme]);
 
   const { id } = useParams();
+  useSocketNotifications(id);
+
   const navigate = useNavigate();
 
   const closeModal = () => {
@@ -47,6 +51,7 @@ const BusinessPage = () => {
   };
 
   const { data, isLoading, isError } = useBusiness(id || "");
+  const business = data?.data;
 
   if (isLoading)
     return (
@@ -99,8 +104,6 @@ const BusinessPage = () => {
       </div>
     );
 
-  const business = data?.data;
-
   return (
     <div
       className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50"
@@ -132,6 +135,7 @@ const BusinessPage = () => {
           <Avg id={business._id} />
           <List data={business.subscribers} />
           {user?._id && <FavoriteButton business={business} />}
+          {user?._id && <EditBusinessDialog business={business} />}
         </div>
         <img
           src={business.img}
